@@ -8,7 +8,7 @@ body {
     box-shadow: inset 0 0 3px rgba(black, 0.8);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: blue;
+    background-color: $cyan;
     border-radius: 3px;
   }
   padding: 0 !important;
@@ -40,27 +40,11 @@ ul {
   list-style: none;
 }
 
-span,
-li,
-p {
-  color: white;
-}
-
 p {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 0;
-}
-
-.underline {
-  border-bottom: 1px solid white;
-  margin-bottom: 8px;
-  padding-bottom: 8px;
-}
-
-.pre-wrap {
-  white-space: pre-wrap;
 }
 
 .hamburger {
@@ -74,7 +58,7 @@ p {
     height: 2px;
     margin-bottom: 4px;
     border-radius: 4px;
-    background: #c4c4c4;
+    background: $cyan;
     z-index: 1;
     transform-origin: 0px 0px;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),

@@ -1,0 +1,89 @@
+header {
+  box-shadow: inset 0 -1px 0 #ebf5ff;
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  .navbar {
+    padding: 21px 0;
+    .hamburger {
+      display: none;
+      @include mq("laptop", max) {
+        display: block;
+      }
+    }
+    &-nav {
+      align-items: center;
+      height: 100%;
+      .nav-item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .nav-link {
+        color: #333333;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 7px solid $cyan;
+          top: 50%;
+          right: 5px;
+          transform: translateY(-50%);
+        }
+        @include mq("laptop") {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+      }
+      @include mq("laptop", max) {
+        display: none;
+        &.active {
+          display: flex;
+          position: absolute;
+          background: white;
+          top: 101px;
+          left: 0px;
+          flex-direction: column;
+          height: calc(100vh - 101px);
+          width: 100%;
+          z-index: 11;
+          overflow: auto;
+          .nav-item {
+            display: flex;
+            width: 100%;
+            height: auto;
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+          }
+          .nav-link {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 24px;
+            color: black;
+            padding: 16px 0 !important;
+            width: 100%;
+            border-bottom: 1px solid rgba(208, 208, 208, 0.4);
+            position: relative;
+            display: flex;
+            align-items: center;
+            // span {
+            //   content: url("../assets/chevron-right-gold.svg");
+            //   position: absolute;
+            //   right: 0;
+            // }
+          }
+        }
+      }
+    }
+  }
+}

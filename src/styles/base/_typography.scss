@@ -1,5 +1,6 @@
 p {
-  font-family: "Source Sans Pro";
+  font-family: "GT Walsheim Pro";
+  color: #535353;
   @include mq("phone", max) {
     font-size: 14px;
     line-height: 20px;
@@ -12,18 +13,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswald";
-  color: white;
+  font-family: "GT Walsheim Pro";
+  color: #404040;
 }
 
-.hero {
-  font-weight: 700;
-  font-size: 58px;
-  line-height: 68px;
-  @include mq("laptop", max) {
-    font-size: 32px;
-    line-height: 40px;
-  }
+a {
+  font-family: "GT Walsheim Pro";
+}
+
+button {
+  font-family: "TT Commons";
 }
 
 h1 {

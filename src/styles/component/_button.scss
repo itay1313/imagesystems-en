@@ -1,0 +1,25 @@
+.btn {
+  &-primary {
+    background-color: $cyan;
+    border: none;
+    color: white;
+  }
+  &-login {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    width: 200px;
+    padding: 20px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    @include mq("laptop", max) {
+      margin-left: auto;
+      margin-right: 16px;
+    }
+    @include mq("phone", max) {
+      padding: 10px 30px;
+      width: auto;
+      height: auto;
+    }
+  }
+}
