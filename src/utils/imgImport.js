@@ -18,9 +18,11 @@ import product2 from "../images/product2.png"
 import product3 from "../images/product3.png"
 
 import testimonial from "../images/testimonial.png"
+import avatar from "../images/avatar.png"
 
 export const Logo = logo
 export const Hero = hero
+export const Avatar = avatar
 
 export const Mission = mission
 

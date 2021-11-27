@@ -4,3 +4,130 @@
   background-repeat: no-repeat;
   @extend %topGap;
 }
+
+.trust-section {
+  background-color: #f9fbfc;
+  padding: 80px 0;
+
+  h2 {
+    text-align: center;
+  }
+
+  .trust-slider-container {
+    margin: 48px 0;
+
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    .trust-img {
+      img {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.mission-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    width: 60%;
+  }
+
+  .mission-section_detail {
+    padding: 0 40px;
+  }
+}
+
+.products-section {
+  .products {
+    display: flex;
+    column-gap: 16px;
+    .product-item {
+      width: calc(33.33333% - 16px);
+      .product-item_img {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: " ";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.7;
+          background-image: linear-gradient(0, #00b1cf, white);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+
+        h2 {
+          color: white;
+          margin-top: -50px;
+          margin-left: 10px;
+          position: absolute;
+        }
+      }
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}
+
+.news-section {
+  .news {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+
+    .news-item {
+      width: calc(33.33333% - 16px);
+      overflow: hidden;
+      &_img {
+        img {
+          object-fit: cover;
+        }
+      }
+
+      .divider {
+        width: 80%;
+        height: 4px;
+        background: #00b1cf;
+        margin: 15px 0;
+      }
+
+      &_author {
+        display: flex;
+        margin: 10px 0;
+        align-items: center;
+        .author-photo {
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+          }
+        }
+
+        .author-detail {
+          margin-left: 10px;
+          h4 {
+          }
+        }
+      }
+    }
+  }
+}
