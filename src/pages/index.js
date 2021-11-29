@@ -13,8 +13,8 @@ import {
   RightArrow,
   RightBtn,
 } from "../utils/imgImport"
-import ProductItem from "../components/ProductItem"
-import NewsItem from "../components/NewsItem"
+import ProductItem from "../components/ProductTemplate"
+import NewsItem from "../components/NewsTemplate"
 import HeroSlide from "../components/HeroSlide"
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
