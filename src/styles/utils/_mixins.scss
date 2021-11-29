@@ -12,7 +12,13 @@
 
 %topGap {
   margin-top: 101px;
-  @include mq("laptop", max) {
+  @include mq("phone", max) {
     margin-top: 87px;
   }
+}
+%fixedContent {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }

@@ -1,80 +1,177 @@
-.hero-section {
-  background-image: url("../images/hero.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+main {
   @extend %topGap;
 }
-
-.trust-section {
-  background-color: #f9fbfc;
-  padding: 80px 0;
-
-  h2 {
-    text-align: center;
+section {
+  margin-bottom: 80px;
+  @include mq("phone", max) {
+    margin-bottom: 40px;
   }
+}
 
-  .trust-slider-container {
-    margin: 48px 0;
-
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    .trust-img {
-      img {
-        margin: auto;
+.hero-section {
+  .hero {
+    &-slide {
+      padding: 0 60px;
+      @extend %fixedContent;
+      @include mq("phone", max) {
+        padding: 0 12px;
+      }
+      .btn-play {
+        @include mq("phone", max) {
+          display: none;
+        }
+      }
+    }
+    &-img {
+      object-fit: cover;
+      width: 100%;
+      @include mq("laptop", max) {
+        height: 400px;
+      }
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 96px;
+      line-height: 113px;
+      color: white;
+      border-bottom: 1px solid $cyan;
+      @include mq("tablet", max) {
+        font-size: 36px;
+        line-height: 43px;
+      }
+    }
+    &-content {
+      margin: 38px 0 20px;
+      font-family: "Apercu";
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 39px;
+      color: white;
+      @include mq("tablet", max) {
+        font-size: 18px;
+      }
+    }
+  }
+  .slick-arrow {
+    @include mq("tablet", max) {
+      display: none !important;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    &::before {
+      color: $cyan;
+    }
+  }
+  .slick-dots {
+    bottom: 23px;
+    li {
+      button {
+        &::before {
+          color: white;
+          font-size: 9px;
+        }
+      }
+    }
+    .slick-active {
+      button {
+        &::before {
+          color: $cyan;
+        }
       }
     }
   }
 }
 
-.mission-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  img {
-    width: 60%;
+.trust-section {
+  margin-bottom: 75px;
+  padding: 80px 0 100px;
+  background-color: #f9fbfc;
+  h2 {
+    text-align: center;
   }
-  .mission-section_detail {
-    padding: 0 40px;
+  .slick-slider {
+    margin: 48px 0;
+    .slick-list {
+      margin: 0 240px;
+      @include mq("laptop-wide", max) {
+        margin: 0 24px;
+      }
+    }
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+    .trust-img {
+      height: 100%;
+      img {
+        margin: auto;
+      }
+    }
+    .slick-arrow {
+      width: 42px;
+      height: auto;
+    }
+    .slick-next {
+      right: 40px;
+    }
+    .slick-prev {
+      left: 40px;
+    }
+  }
+}
+
+.mission-section {
+  &__detail {
+    h2 {
+      border-bottom: 4px solid $cyan;
+    }
+    p {
+      font-size: 24px;
+      line-height: 36px;
+      color: #535353;
+    }
   }
 }
 
 .products-section {
-  .products {
-    display: flex;
-    column-gap: 16px;
-    .product-item {
-      width: calc(33.33333% - 16px);
-      .product-item_img {
-        position: relative;
-        overflow: hidden;
-        &::before {
-          content: " ";
-          display: block;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          opacity: 0.7;
-          background-image: linear-gradient(0, #00b1cf, white);
-        }
-
-        img {
-          object-fit: cover;
-          width: 100%;
-        }
-
-        h2 {
-          color: white;
-          margin-top: -50px;
-          margin-left: 10px;
-          position: absolute;
-        }
+  h2 {
+    border-bottom: 4px solid $cyan;
+  }
+  .product-item {
+    margin-top: 80px;
+    @include mq("phone", max) {
+      margin-top: 40px;
+    }
+    &__img {
+      position: relative;
+      &::before {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 140px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 177, 207, 0.8);
+        filter: blur(120px);
       }
-      p {
-        margin: 20px 0;
+      h3 {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        padding-left: 10px;
+        color: white;
       }
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    p {
+      margin-top: 50px;
+      font-size: 20px;
+      line-height: 28px;
     }
   }
 
@@ -87,43 +184,108 @@
 }
 
 .news-section {
-  .news {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 16px;
-
-    .news-item {
-      width: calc(33.33333% - 16px);
-      overflow: hidden;
-      &_img {
-        img {
-          object-fit: cover;
-        }
+  h2 {
+    margin-bottom: 50px;
+  }
+  .news-item {
+    padding: 0 20px;
+    @include mq("phone", max) {
+      padding: 0;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &__content {
+      padding: 40px 20px;
+      background: rgba(239, 247, 249, 0.6);
+      h3 {
+        font-size: 32px;
+        line-height: 40px;
       }
-
       .divider {
-        width: 80%;
+        width: 60%;
         height: 4px;
         background: #00b1cf;
         margin: 15px 0;
       }
-
-      &_author {
-        display: flex;
-        margin: 10px 0;
-        align-items: center;
-        .author-photo {
-          img {
-            width: 80px;
-            height: 80px;
-            border-radius: 100%;
-          }
+      .news-description {
+        font-family: "Raleway";
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    &__author {
+      display: flex;
+      margin: 10px 0;
+      align-items: center;
+      .author-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .author-detail {
+        margin-left: 20px;
+        h4 {
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 56px;
+          letter-spacing: 0.2px;
         }
+        p {
+          font-family: "Raleway";
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .arrow-btns {
+    text-align: right;
+    margin-top: 50px;
+    .custom-arrow {
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: $cyan;
+      border: unset;
+    }
+  }
+}
 
-        .author-detail {
-          margin-left: 10px;
-          h4 {
-          }
+.testimonial-section {
+  height: 800px;
+  margin-bottom: 0;
+  background-image: url("../images/testimonial.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include mq("phone", max) {
+    height: 450px;
+  }
+  .testimonial-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .openquote {
+      text-align: left;
+    }
+    .closequote {
+      text-align: right;
+    }
+    blockquote {
+      p {
+        font-family: "GT Walsheim Pro";
+        padding-left: 30px;
+        font-weight: bold;
+        font-size: 54px;
+        line-height: 120%;
+        color: #303030;
+        small {
+          display: block;
+          font-size: 20px;
+          line-height: 30px;
         }
       }
     }

@@ -1,21 +1,19 @@
 import React from "react"
 
-export const NewsItem = ({ img, title, description, author }) => {
+export const NewsItem = ({ data }) => {
   return (
     <div className="news-item">
-      <div className="news-item_img">
-        <img src={img} alt="news image" />
-      </div>
-      <h2>{title}</h2>
-      <div className="divider"></div>
-      <p>{description}</p>
-      <div className="news-item_author">
-        <div className="author-photo">
-          <img src={author.photo} />
-        </div>
-        <div className="author-detail">
-          <h4>{author.name}</h4>
-          <p>{author.position}</p>
+      <img src={data.img} alt="news" />
+      <div className="news-item__content">
+        <h3>{data.title}</h3>
+        <div className="divider"></div>
+        <p className="news-description">{data.description}</p>
+        <div className="news-item__author">
+          <img className="author-photo" src={data.author.avatar} alt="author" />
+          <div className="author-detail">
+            <h4>{data.author.name}</h4>
+            <p>{data.author.role}</p>
+          </div>
         </div>
       </div>
     </div>

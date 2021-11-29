@@ -35,5 +35,16 @@ module.exports = {
         url: `http://commandoproject.com/graphql`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: "Raleway",
+            weights: ["300", "400", "500", "700"],
+          },
+        ],
+      },
+    },
   ],
 }

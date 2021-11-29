@@ -20,6 +20,14 @@ import product3 from "../images/product3.png"
 import testimonial from "../images/testimonial.png"
 import avatar from "../images/avatar.png"
 
+import leftArrow from "../images/left-arrow.png"
+import rightArrow from "../images/right-arrow.png"
+import leftBtn from "../images/left.png"
+import rightBtn from "../images/right.png"
+
+import openquote from "../images/openquote.png"
+import closequote from "../images/closequote.png"
+
 export const Logo = logo
 export const Hero = hero
 export const Avatar = avatar
@@ -41,3 +49,11 @@ export const News2 = news2
 export const News3 = news3
 
 export const Testimonial = testimonial
+
+export const LeftArrow = leftArrow
+export const RightArrow = rightArrow
+export const LeftBtn = leftBtn
+export const RightBtn = rightBtn
+
+export const Openquote = openquote
+export const Closequote = closequote
