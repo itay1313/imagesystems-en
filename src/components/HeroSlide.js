@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export const HeroSlide = ({ data }) => {
+const HeroSlide = ({ data }) => {
   return (
     <div className="position-relative">
       <img src={data.img} alt="hero slide" className="hero-img" />
@@ -22,3 +22,5 @@ export const HeroSlide = ({ data }) => {
     </div>
   )
 }
+
+export default HeroSlide

@@ -1,6 +1,6 @@
 import React from "react"
 
-export const ProductItem = ({ data }) => {
+const ProductItem = ({ data }) => {
   return (
     <div className="col-sm-4 product-item">
       <div className="product-item__img">
@@ -11,3 +11,5 @@ export const ProductItem = ({ data }) => {
     </div>
   )
 }
+
+export default ProductItem

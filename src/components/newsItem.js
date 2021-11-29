@@ -1,6 +1,6 @@
 import React from "react"
 
-export const NewsItem = ({ data }) => {
+const NewsItem = ({ data }) => {
   return (
     <div className="news-item">
       <img src={data.img} alt="news" />
@@ -19,3 +19,5 @@ export const NewsItem = ({ data }) => {
     </div>
   )
 }
+
+export default NewsItem

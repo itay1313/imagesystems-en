@@ -1,5 +1,5 @@
 import logo from "../images/logo.png"
-import hero from "../images/hero.png"
+import banner from "../images/banner.png"
 
 import mission from "../images/mission.png"
 
@@ -29,7 +29,7 @@ import openquote from "../images/openquote.png"
 import closequote from "../images/closequote.png"
 
 export const Logo = logo
-export const Hero = hero
+export const Banner = banner
 export const Avatar = avatar
 
 export const Mission = mission

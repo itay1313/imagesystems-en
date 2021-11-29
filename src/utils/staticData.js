@@ -1,6 +1,6 @@
 import {
   Avatar,
-  Hero,
+  Banner,
   News1,
   News2,
   News3,
@@ -18,7 +18,7 @@ export const logos = [Trust1, Trust2, Trust3, Trust4, Trust5, Trust1]
 
 export const heros = [
   {
-    img: Hero,
+    img: Banner,
     title: "DIC Elite Kit",
     content:
       "Highly integrated system with smart aligment trusted by over 1000 companies in 140 countries ",
@@ -26,7 +26,7 @@ export const heros = [
     to: "/",
   },
   {
-    img: Hero,
+    img: Banner,
     title: "DIC Elite Kit",
     content:
       "Highly integrated system with smart aligment trusted by over 1000 companies in 140 countries ",
@@ -34,7 +34,7 @@ export const heros = [
     to: "/",
   },
   {
-    img: Hero,
+    img: Banner,
     title: "DIC Elite Kit",
     content:
       "Highly integrated system with smart aligment trusted by over 1000 companies in 140 countries ",
@@ -42,7 +42,7 @@ export const heros = [
     to: "/",
   },
   {
-    img: Hero,
+    img: Banner,
     title: "DIC Elite Kit",
     content:
       "Highly integrated system with smart aligment trusted by over 1000 companies in 140 countries ",

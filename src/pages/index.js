@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
 import Slider from "react-slick"
 import { logos, heros, products, news } from "../utils/staticData"
@@ -13,9 +13,9 @@ import {
   RightArrow,
   RightBtn,
 } from "../utils/imgImport"
-import { ProductItem } from "../components/ProductItem"
-import { NewsItem } from "../components/NewsItem"
-import { HeroSlide } from "../components/HeroSlide"
+import ProductItem from "../components/ProductItem"
+import NewsItem from "../components/NewsItem"
+import HeroSlide from "../components/HeroSlide"
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <button
@@ -46,7 +46,7 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   </button>
 )
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   const hero_settings = {
     dots: true,
     infinite: true,
@@ -115,6 +115,9 @@ const IndexPage = () => {
   const previous = () => {
     slider.current.slickPrev()
   }
+
+  const homepageData = data.allWpPost.nodes
+  // console.log(homepageData)
 
   return (
     <Layout>
@@ -216,3 +219,19 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    allWpPost {
+      nodes {
+        title
+        content
+        categories {
+          nodes {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
