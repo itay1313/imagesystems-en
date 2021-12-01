@@ -123,13 +123,11 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <section className="hero-section">
-        <div className="container">
-          <Slider {...hero_settings}>
-            {heroSlider.map((item, idx) => (
-              <HeroSlide data={item} key={idx} />
-            ))}
-          </Slider>
-        </div>
+        <Slider {...hero_settings}>
+          {heroSlider.map((item, idx) => (
+            <HeroSlide data={item} key={idx} />
+          ))}
+        </Slider>
       </section>
       <section className="container trust-section">
         <h2>Trusted by over 1000 companies in 140 countries</h2>
