@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
 import Slider from "react-slick"
-import { logos, heros, products, news } from "../utils/staticData"
+import { logos, products, news } from "../utils/staticData"
 import {
   Closequote,
   LeftArrow,
@@ -116,8 +116,8 @@ const IndexPage = ({ data }) => {
     slider.current.slickPrev()
   }
 
-  const homepageData = data.allWpPost.nodes
-  // console.log(homepageData)
+  const heroSlider = data?.allWpPage.nodes[0].homepageQuery.heroSlider
+  // console.log(heroSlider)
 
   return (
     <Layout>
@@ -125,7 +125,7 @@ const IndexPage = ({ data }) => {
       <section className="hero-section">
         <div className="container">
           <Slider {...hero_settings}>
-            {heros.map((item, idx) => (
+            {heroSlider.map((item, idx) => (
               <HeroSlide data={item} key={idx} />
             ))}
           </Slider>
@@ -222,13 +222,20 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    allWpPost {
+    allWpPage(filter: { slug: { eq: "homepage" } }) {
       nodes {
-        title
-        content
-        categories {
-          nodes {
-            slug
+        homepageQuery {
+          heroSlider {
+            title
+            content
+            buttonName
+            buttonLink
+            fieldGroupName
+            background {
+              localFile {
+                url
+              }
+            }
           }
         }
       }
