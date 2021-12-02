@@ -10,6 +10,12 @@ section {
 
 .hero-section {
   .hero {
+    &-slides {
+      height: 700px;
+      @include mq("tablet", max) {
+        height: 400px;
+      }
+    }
     &-slide {
       padding: 0 60px;
       @extend %fixedContent;
@@ -25,9 +31,7 @@ section {
     &-img {
       object-fit: cover;
       width: 100%;
-      @include mq("laptop", max) {
-        height: 400px;
-      }
+      height: 100%;
     }
     &-title {
       font-weight: bold;
@@ -35,7 +39,7 @@ section {
       line-height: 113px;
       color: white;
       border-bottom: 1px solid $cyan;
-      @include mq("tablet", max) {
+      @include mq("laptop", max) {
         font-size: 36px;
         line-height: 43px;
       }
@@ -89,13 +93,16 @@ section {
   background-color: #f9fbfc;
   h2 {
     text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 56px;
   }
   .slick-slider {
     margin: 48px 0;
     .slick-list {
       margin: 0 240px;
       @include mq("laptop-wide", max) {
-        margin: 0 24px;
+        margin: 0 50px;
       }
     }
     .slick-track {
@@ -106,17 +113,34 @@ section {
       height: 100%;
       img {
         margin: auto;
+        width: 160px;
+        // height: 35px;
       }
     }
     .slick-arrow {
       width: 42px;
       height: auto;
+      &::before {
+        font-size: 0;
+      }
+      img {
+        @include mq("laptop", max) {
+          width: 25px;
+          height: 40px;
+        }
+      }
     }
     .slick-next {
       right: 40px;
+      @include mq("laptop", max) {
+        right: 20px;
+      }
     }
     .slick-prev {
       left: 40px;
+      @include mq("laptop", max) {
+        left: 20px;
+      }
     }
   }
 }
@@ -188,7 +212,7 @@ section {
     margin-bottom: 50px;
   }
   .news-item {
-    padding: 0 20px;
+    padding: 0 12px;
     @include mq("phone", max) {
       padding: 0;
     }
@@ -254,39 +278,50 @@ section {
 }
 
 .testimonial-section {
-  height: 800px;
-  margin-bottom: 0;
-  background-image: url("../images/testimonial.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 60px 0;
+  background: #fbfbfb;
   @include mq("phone", max) {
     height: 450px;
   }
+  h2 {
+    margin-bottom: 160px;
+  }
   .testimonial-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    .openquote {
-      text-align: left;
+    padding: 100px 23px 40px;
+    margin-bottom: 100px;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    &__avatar {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translatex(-50%);
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
     }
-    .closequote {
-      text-align: right;
+    &__name {
+      font-family: "GT Walsheim Pro";
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 40px;
     }
-    blockquote {
+    &__role {
+      font-family: "GT Walsheim Pro";
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 56px;
+      padding-bottom: 16px;
+      border-bottom: 4px solid $cyan;
+    }
+    &__text {
       p {
+        margin: 16px 0;
         font-family: "GT Walsheim Pro";
-        padding-left: 30px;
-        font-weight: bold;
-        font-size: 54px;
-        line-height: 120%;
-        color: #303030;
-        small {
-          display: block;
-          font-size: 20px;
-          line-height: 30px;
-        }
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 28px;
       }
     }
   }

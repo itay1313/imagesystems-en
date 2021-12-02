@@ -11,6 +11,9 @@
     font-size: 20px;
     line-height: 24px;
     padding: 30px 70px;
+    @include mq("tablet", max) {
+      padding: 15px 35px;
+    }
   }
   &-login {
     font-weight: bold;

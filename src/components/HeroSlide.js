@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const HeroSlide = ({ data }) => {
   return (
-    <div className="position-relative">
+    <div className="position-relative hero-slides">
       <img
         src={data.background.localFile.url}
         alt="hero slide"
@@ -22,7 +22,7 @@ const HeroSlide = ({ data }) => {
             </Link>
           </div>
           <div className="col-md-5 d-flex align-items-center justify-content-center">
-            <button className="btn-play">{""}</button>
+            {/* <button className="btn-play">{""}</button> */}
           </div>
         </div>
       </div>

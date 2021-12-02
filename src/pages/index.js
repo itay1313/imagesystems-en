@@ -3,19 +3,11 @@ import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
 import Slider from "react-slick"
-import { logos, products, news } from "../utils/staticData"
-import {
-  Closequote,
-  LeftArrow,
-  LeftBtn,
-  Mission,
-  Openquote,
-  RightArrow,
-  RightBtn,
-} from "../utils/imgImport"
-import ProductItem from "../components/ProductTemplate"
-import NewsItem from "../components/NewsTemplate"
+import { LeftArrow, LeftBtn, RightArrow, RightBtn } from "../utils/imgImport"
+import ProductItem from "../components/Product"
+import NewsItem from "../components/News"
 import HeroSlide from "../components/HeroSlide"
+import TestimonialItem from "../components/Testimonial"
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <button
@@ -50,25 +42,19 @@ const IndexPage = ({ data }) => {
   const hero_settings = {
     dots: true,
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
-  const trust_settings = {
+  const logo_settings = {
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
     responsive: [
-      {
-        breakpoint: 1440,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-        },
-      },
       {
         breakpoint: 1024,
         settings: {
@@ -76,21 +62,6 @@ const IndexPage = ({ data }) => {
           slidesToScroll: 1,
         },
       },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  }
-  const news_settings = {
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    responsive: [
       {
         breakpoint: 768,
         settings: {
@@ -107,6 +78,28 @@ const IndexPage = ({ data }) => {
       },
     ],
   }
+  const news_settings = {
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  }
 
   const slider = useRef()
   const next = () => {
@@ -116,46 +109,49 @@ const IndexPage = ({ data }) => {
     slider.current.slickPrev()
   }
 
-  const heroSlider = data?.allWpPage.nodes[0].homepageQuery.heroSlider
-  // console.log(heroSlider)
+  const homeQuery = data?.allWpPage.nodes[0].homepageQuery
+  const heroSlides = homeQuery.heroSlider
+  const logoSlides = homeQuery.logos
+  const testimonials = homeQuery.testimonial
+  const products = data?.allWpProduct.nodes
+  const posts = data?.allWpPost.nodes
 
   return (
     <Layout>
       <Seo title="Home" />
       <section className="hero-section">
         <Slider {...hero_settings}>
-          {heroSlider.map((item, idx) => (
+          {heroSlides.map((item, idx) => (
             <HeroSlide data={item} key={idx} />
           ))}
         </Slider>
       </section>
       <section className="container trust-section">
         <h2>Trusted by over 1000 companies in 140 countries</h2>
-        <Slider {...trust_settings}>
-          {logos.map((item, idx) => (
+        <Slider {...logo_settings}>
+          {logoSlides.map((item, idx) => (
             <div className="trust-img" key={idx}>
-              <img src={item} alt="trust logos" />
+              <img src={item.logo.localFile.url} alt="trust logos" />
             </div>
           ))}
         </Slider>
       </section>
       <section className="container mission-section">
         <div className="row">
-          <div className="col-sm-7">
-            <img className="w-100" src={Mission} alt="mission" />
+          <div className="col-lg-7 mb-4">
+            <img
+              className="w-100"
+              src={homeQuery?.missionImage.localFile.url}
+              alt="mission"
+            />
           </div>
-          <div className="col-sm-5 mission-section__detail">
-            <h2>Our mission is this</h2>
-            <p className="my-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit
-              amet lectus eu lorem laoreet facilisis. Proin fringilla enim et
-              dui sagittis ornare. Nam pellentesque efficitur gravida. Sed vel
-              erat viverra, sollicitudin ligula at, volutpat libero. Sed semper
-              egestas ante eget interdum. Nulla et enim sit amet magna dapibus
-              ullamcorper. Fusce ut orci nisi. auris auctor vitae lacus vel
-              congue.
-            </p>
-            <Link className="btn-link" to="/">
+          <div className="col-lg-5 mission-section__detail">
+            <h2>{homeQuery?.missionTitle}</h2>
+            <div
+              className="my-5"
+              dangerouslySetInnerHTML={{ __html: homeQuery?.missionText }}
+            />
+            <Link className="btn-link" to={homeQuery?.missionUrl}>
               Learn more
             </Link>
           </div>
@@ -163,7 +159,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="container products-section">
         <h2>Our Products</h2>
-        <div className="row">
+        <div className="row justify-content-center">
           {products.map((item, idx) => (
             <ProductItem key={idx} data={item} />
           ))}
@@ -177,7 +173,7 @@ const IndexPage = ({ data }) => {
           <h2>Latest News</h2>
           {
             <Slider ref={c => (slider.current = c)} {...news_settings}>
-              {news.map((item, index) => (
+              {posts.map((item, index) => (
                 <NewsItem data={item} key={index} />
               ))}
             </Slider>
@@ -193,22 +189,12 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <section className="testimonial-section">
-        <div className="container h-100">
-          <div className="row h-100">
-            <div className="col-sm-6"></div>
-            <div className="col-sm-6 testimonial-item">
-              <blockquote>
-                <div className="openquote">
-                  <img src={Openquote} alt="openquote" />
-                </div>
-                <p>
-                  The Software Is the Instrument <small>Andrea</small>
-                </p>
-                <div className="closequote">
-                  <img src={Closequote} alt="closequote" />
-                </div>
-              </blockquote>
-            </div>
+        <div className="container">
+          <h2>Testimonials</h2>
+          <div className="row justify-content-center">
+            {testimonials.map((item, idx) => (
+              <TestimonialItem key={idx} data={item} />
+            ))}
           </div>
         </div>
       </section>
@@ -234,6 +220,63 @@ export const pageQuery = graphql`
                 url
               }
             }
+          }
+          companiesTitle
+          logos {
+            logo {
+              localFile {
+                url
+              }
+            }
+          }
+          missionTitle
+          missionText
+          missionUrl
+          missionImage {
+            localFile {
+              url
+            }
+          }
+          testimonial {
+            testimonialTitle
+            testimonialText
+            testimonialSubtitle
+            stars
+            avatar {
+              localFile {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+    allWpProduct {
+      nodes {
+        title
+        content
+        featuredImage {
+          node {
+            srcSet
+          }
+        }
+      }
+    }
+    allWpPost {
+      nodes {
+        title
+        content
+        featuredImage {
+          node {
+            srcSet
+          }
+        }
+        author {
+          node {
+            avatar {
+              url
+            }
+            name
           }
         }
       }
