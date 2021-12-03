@@ -251,7 +251,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allWpProduct {
+    allWpProduct(limit: 3, sort: { fields: date, order: DESC }) {
       nodes {
         title
         content
