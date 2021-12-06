@@ -13,12 +13,11 @@ const temas = [
   },
 ]
 
-// ${!hover && "d-none"}
 const NavDropdownMenu = ({ onProductMenu, hover }) => {
   console.log(hover)
   return (
     <div
-      className={`dropdown-content `}
+      className={`dropdown-content ${!hover && "d-none"}`}
       onMouseLeave={() => onProductMenu()}
       onKeyDown={() => onProductMenu()}
       role="presentation"
