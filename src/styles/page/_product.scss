@@ -1,0 +1,12 @@
+.product-page {
+  padding: 123px 0;
+  .product-title {
+    text-align: center;
+  }
+  .product-content {
+    width: 100%;
+    .gatsby-image-wrapper {
+      width: 100%;
+    }
+  }
+}

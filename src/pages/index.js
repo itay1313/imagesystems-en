@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
 import Slider from "react-slick"
 import { LeftArrow, LeftBtn, RightArrow, RightBtn } from "../utils/imgImport"
-import ProductItem from "../components/Product"
+import ProductItem from "../components/ProductItem"
 import NewsItem from "../components/News"
 import HeroSlide from "../components/HeroSlide"
 import TestimonialItem from "../components/Testimonial"
@@ -157,14 +157,16 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="container products-section">
-        <h2>Our Products</h2>
-        <div className="row justify-content-center">
-          {products.map((item, idx) => (
-            <ProductItem key={idx} data={item} />
-          ))}
-          <div className="text-center mt-5">
-            <button className="btn-primary">Learn more</button>
+      <section className="products-section">
+        <div className="container">
+          <h2>Our Products</h2>
+          <div className="row justify-content-center">
+            {products.map((item, idx) => (
+              <ProductItem key={idx} data={item} />
+            ))}
+            <div className="text-center mt-5">
+              <button className="btn-primary">Learn more</button>
+            </div>
           </div>
         </div>
       </section>
@@ -255,11 +257,7 @@ export const pageQuery = graphql`
       nodes {
         title
         content
-        featuredImage {
-          node {
-            srcSet
-          }
-        }
+        uri
       }
     }
     allWpPost {
