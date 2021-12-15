@@ -4,8 +4,8 @@ import { Link, graphql } from "gatsby"
 import Seo from "../components/seo"
 import Slider from "react-slick"
 import { LeftArrow, LeftBtn, RightArrow, RightBtn } from "../utils/imgImport"
-import ProductItem from "../components/ProductItem"
-import NewsItem from "../components/News"
+import ProductTemplate from "../components/Product"
+import NewsTemplate from "../components/News"
 import HeroSlide from "../components/HeroSlide"
 import TestimonialItem from "../components/Testimonial"
 
@@ -162,7 +162,7 @@ const IndexPage = ({ data }) => {
           <h2>Our Products</h2>
           <div className="row justify-content-center">
             {products.map((item, idx) => (
-              <ProductItem key={idx} data={item} />
+              <ProductTemplate key={idx} data={item} />
             ))}
             <div className="text-center mt-5">
               <button className="btn-primary">Learn more</button>
@@ -176,7 +176,7 @@ const IndexPage = ({ data }) => {
           {
             <Slider ref={c => (slider.current = c)} {...news_settings}>
               {posts.map((item, index) => (
-                <NewsItem data={item} key={index} />
+                <NewsTemplate data={item} key={index} />
               ))}
             </Slider>
           }
