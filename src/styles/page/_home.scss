@@ -1,5 +1,5 @@
 main {
-  @extend %topGap;
+  // @extend %topGap;
 }
 section {
   margin-bottom: 80px;
@@ -38,14 +38,13 @@ section {
       font-size: 96px;
       line-height: 113px;
       color: white;
-      border-bottom: 1px solid $cyan;
       @include mq("laptop", max) {
         font-size: 36px;
         line-height: 43px;
       }
     }
     &-content {
-      margin: 38px 0 20px;
+      margin: 40px 0 60px;
       font-family: "Apercu";
       font-weight: 500;
       font-size: 32px;

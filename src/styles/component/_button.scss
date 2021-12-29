@@ -4,8 +4,9 @@
   vertical-align: middle;
   border-radius: 0;
   &-primary {
-    background-color: $cyan;
-    border: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 80px;
     color: white;
     font-weight: bold;
     font-size: 20px;

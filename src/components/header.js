@@ -88,7 +88,11 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <button className="btn-primary btn-login">Login</button>
+          <a href="#"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 19.6673C19 14.5127 14.8213 10.334 9.66666 10.334C4.512 10.334 0.333328 14.5127 0.333328 19.6673" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6667 4.33398C13.6667 6.54332 11.876 8.33398 9.66666 8.33398C7.45732 8.33398 5.66666 6.54332 5.66666 4.33398C5.66666 2.12465 7.45732 0.333984 9.66666 0.333984C11.876 0.333984 13.6667 2.12465 13.6667 4.33398Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+            <span>Login</span></a>
           <div
             className={humbugerClsName}
             onClick={hamburgerHandler}
