@@ -126,6 +126,19 @@ const IndexPage = ({ data }) => {
           ))}
         </Slider>
       </section>
+      <section className="products-section">
+        <div className="container">
+          <h2>Our Products</h2>
+          <div className="row justify-content-center">
+            {products.map((item, idx) => (
+              <ProductTemplate key={idx} data={item} />
+            ))}
+            <div className="text-center mt-5">
+              <button className="btn-primary">Learn more</button>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="container trust-section">
         <h2>Trusted by over 1000 companies in 140 countries</h2>
         <Slider {...logo_settings}>
@@ -157,19 +170,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="products-section">
-        <div className="container">
-          <h2>Our Products</h2>
-          <div className="row justify-content-center">
-            {products.map((item, idx) => (
-              <ProductTemplate key={idx} data={item} />
-            ))}
-            <div className="text-center mt-5">
-              <button className="btn-primary">Learn more</button>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section className="container news-section">
         <div className="container">
           <h2>Latest News</h2>
