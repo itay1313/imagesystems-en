@@ -6,7 +6,11 @@ header {
   top: 0;
   border-width: 0;
   .navbar {
-    padding: 21px 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    @include mq("phone", max) {
+      padding: 15px 0;
+    }
     .hamburger {
       display: none;
       @include mq("laptop", max) {
@@ -16,76 +20,72 @@ header {
     .dropdown {
       position: relative;
       display: flex;
-
       &-content {
+        display: none;
         position: fixed;
         z-index: 1;
         left: 0;
         width: 100%;
-        top: 101px;
+        top: 80px;
         background: #f5f5f5;
-        .dropmenu {
-          &-nav {
+        .prod-tabs {
+          &__list {
             display: flex;
+            margin: 60px 0;
             flex-direction: column;
-            justify-content: center;
-            padding-right: 0;
-            .dropmenu-link {
+            border: none;
+            .react-tabs__tab {
+              display: flex;
               padding: 20px;
-              &.active {
-                background-color: white;
+              align-items: center;
+              font-weight: 800;
+              font-size: 14px;
+              line-height: 16px;
+              text-transform: uppercase;
+              color: $gray;
+              bottom: 0;
+              img {
+                margin-left: 10px;
               }
-              a {
-                font-weight: 800;
-                font-size: 14px;
-                line-height: 16px;
-                color: $gray;
-                position: relative;
-                &::before {
-                  content: "";
-                  position: absolute;
-                  background-image: url("../images/chevron-right.png");
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  width: 12px;
-                  height: 12px;
-                  right: -20px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                }
+              &--selected {
+                border: none;
+                border-radius: unset;
               }
             }
           }
-          &-content {
-            background-color: white;
-            padding: 27px 53px;
-            .submenu {
-              display: flex;
-              margin-top: 40px;
-              li {
-                margin-right: 50px;
-                a {
-                  display: block;
-                  text-align: center;
-                  .submenu-img {
-                    opacity: 0.8;
-                  }
-                  .submenu-name {
-                    margin-top: 24px;
-                    font-weight: 500;
-                    font-size: 18px;
-                    line-height: 21px;
-                    color: black;
-                  }
-                  &:hover {
-                    .submenu-img {
-                      opacity: 1;
-                    }
-                    .submenu-name {
-                      font-weight: 700;
-                    }
-                  }
-                }
+        }
+        .prod__detail-tab {
+          .product {
+            &-name {
+              margin-top: 30px;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 21px;
+              text-align: center;
+              color: #000000;
+            }
+            &-img {
+              width: 130px;
+              height: 130px;
+            }
+            &-content {
+              p {
+                font-size: 14px;
+                line-height: 17px;
+                color: #000000;
+              }
+            }
+          }
+          .react-tabs__tab-list {
+            margin-top: 50px;
+            border-bottom: unset;
+            .react-tabs__tab {
+              opacity: 0.7;
+
+              &--selected {
+                opacity: 1;
+                border: none;
+                border-radius: unset;
               }
             }
           }
@@ -140,7 +140,11 @@ header {
           }
         }
       }
-
+      &:hover {
+        .dropdown-content {
+          display: block;
+        }
+      }
       @include mq("laptop", max) {
         flex-direction: column;
         &.show {
@@ -178,6 +182,8 @@ header {
         line-height: 20px;
         text-transform: uppercase;
         position: relative;
+        padding-top: 30px;
+        padding-bottom: 30px;
         &::after {
           content: "";
           position: absolute;
@@ -199,7 +205,7 @@ header {
           display: flex;
           position: absolute;
           background: white;
-          top: 101px;
+          top: 75px;
           left: 0px;
           flex-direction: column;
           height: calc(100vh - 101px);

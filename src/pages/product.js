@@ -11,9 +11,14 @@ const ProductPage = ({ pageContext }) => {
       <div className="container">
         <div className="product-page">
           <h1 className="product-title">{product?.title}</h1>
+          <img
+            src={product?.featuredImage.node.sourceUrl}
+            alt="product"
+            className="product-img"
+          />
           <div
             className="product-contnet"
-            dangerouslySetInnerHTML={{ __html: product?.content }}
+            dangerouslySetInnerHTML={{ __html: product?.excerpt }}
           />
         </div>
       </div>

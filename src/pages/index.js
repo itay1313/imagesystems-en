@@ -164,9 +164,9 @@ const IndexPage = ({ data }) => {
             {products.map((item, idx) => (
               <ProductTemplate key={idx} data={item} />
             ))}
-            <div className="text-center mt-5">
+            {/* <div className="text-center mt-5">
               <button className="btn-primary">Learn more</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -256,7 +256,12 @@ export const pageQuery = graphql`
     allWpProduct(limit: 3, sort: { fields: date, order: DESC }) {
       nodes {
         title
-        content
+        excerpt
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
         uri
       }
     }
