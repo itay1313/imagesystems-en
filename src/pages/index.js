@@ -119,6 +119,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
+
       <section className="hero-section">
         <Slider {...hero_settings}>
           {heroSlides.map((item, idx) => (
@@ -126,6 +127,7 @@ const IndexPage = ({ data }) => {
           ))}
         </Slider>
       </section>
+
       <section className="products-section">
         <div className="container">
           <h2>Our Products</h2>
@@ -133,12 +135,13 @@ const IndexPage = ({ data }) => {
             {products.map((item, idx) => (
               <ProductTemplate key={idx} data={item} />
             ))}
-            <div className="text-center mt-5">
+            {/* <div className="text-center mt-5">
               <button className="btn-primary">Learn more</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
+
       <section className="container trust-section">
         <h2>Trusted by over 1000 companies in 140 countries</h2>
         <Slider {...logo_settings}>
@@ -149,6 +152,7 @@ const IndexPage = ({ data }) => {
           ))}
         </Slider>
       </section>
+
       <section className="container mission-section">
         <div className="row">
           <div className="col-lg-7 mb-4">
@@ -191,6 +195,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+
       <section className="testimonial-section">
         <div className="container">
           <h2>Testimonials</h2>
@@ -257,7 +262,12 @@ export const pageQuery = graphql`
     allWpProduct(limit: 3, sort: { fields: date, order: DESC }) {
       nodes {
         title
-        content
+        excerpt
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
         uri
       }
     }
