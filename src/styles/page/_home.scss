@@ -284,41 +284,43 @@ section {
     margin-bottom: 160px;
   }
   .testimonial-item {
-    padding: 100px 23px 40px;
-    margin-bottom: 100px;
+    padding: 40px 60px;
+    margin-bottom: 40px;
     background-color: white;
     text-align: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    text-align: left;
     &__avatar {
-      position: absolute;
-      top: -80px;
-      left: 50%;
-      transform: translatex(-50%);
-      border-radius: 50%;
-      width: 160px;
-      height: 160px;
+      padding-right: 50px;
     }
-    &__name {
-      font-family: "GT Walsheim Pro";
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 40px;
-    }
-    &__role {
-      font-family: "GT Walsheim Pro";
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 56px;
-      padding-bottom: 16px;
-      border-bottom: 4px solid $cyan;
-    }
-    &__text {
-      p {
-        margin: 16px 0;
+    &-detail {
+      display: flex;
+      flex-direction: column;
+
+      &__name {
+        font-family: "GT Walsheim Pro";
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 40px;
+      }
+      &__role {
         font-family: "GT Walsheim Pro";
         font-weight: normal;
         font-size: 20px;
-        line-height: 28px;
+        line-height: 56px;
+        padding-left: 20px;
+      }
+      &__text {
+        p {
+          margin: 16px 0;
+          font-family: "GT Walsheim Pro";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
     }
   }
