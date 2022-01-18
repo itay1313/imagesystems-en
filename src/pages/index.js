@@ -142,15 +142,17 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="container trust-section">
-        <h2>Trusted by over 1000 companies in 140 countries</h2>
-        <Slider {...logo_settings}>
-          {logoSlides.map((item, idx) => (
-            <div className="trust-img" key={idx}>
-              <img src={item.logo.localFile.url} alt="trust logos" />
-            </div>
-          ))}
-        </Slider>
+      <section className="trust-section">
+        <div className="container">
+          <h2>Trusted by over 1000 companies in 140 countries</h2>
+          <Slider {...logo_settings}>
+            {logoSlides.map((item, idx) => (
+              <div className="trust-img" key={idx}>
+                <img src={item.logo.localFile.url} alt="trust logos" />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </section>
 
       <section className="container mission-section">

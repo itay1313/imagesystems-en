@@ -2,10 +2,9 @@ main {
   // @extend %topGap;
 }
 section {
-  margin-bottom: 80px;
-  @include mq("phone", max) {
-    margin-bottom: 40px;
-  }
+  // @include mq("phone", max) {
+  //   margin-bottom: 40px;
+  // }
 }
 
 .hero-section {
@@ -13,7 +12,7 @@ section {
     &-slides {
       height: 90vh;
       @include mq("tablet", max) {
-        height: 400px;
+        height: 90vh;
       }
     }
     &-slide {
@@ -146,9 +145,9 @@ section {
 
 .mission-section {
   &__detail {
-    h2 {
-      border-bottom: 4px solid $cyan;
-    }
+    // h2 {
+    //   border-bottom: 4px solid $cyan;
+    // }
     p {
       font-size: 24px;
       line-height: 36px;
@@ -160,9 +159,9 @@ section {
 .products-section {
   background: #ffffff;
   padding: 100px 0;
-  h2 {
-    border-bottom: 4px solid $cyan;
-  }
+  // h2 {
+  //   border-bottom: 4px solid $cyan;
+  // }
   .product-item {
     margin-top: 30px;
     background-color: white;
