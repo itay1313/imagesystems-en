@@ -33,6 +33,23 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url: process.env.WPGRAPHQL_URL || `http://commandoproject.com/graphql`,
+        schema: {
+          requestConcurrency: 1,
+          timeout: 90000,
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 1,
+              maxFileSizeBytes: 100000000,
+            },
+          },
+        },
+        develop: {
+          hardCacheMediaFiles: true,
+          hardCacheData: true,
+          nodeUpdateInterval: 6000000,
+        },
       },
     },
     {

@@ -3,7 +3,7 @@ import React from "react"
 const NewsItem = ({ data }) => {
   return (
     <div className="news-item">
-      <img src={data.featuredImage.node.srcSet} alt="news" />
+      <img src={data.featuredImage?.node.srcSet} alt="news" />
       <div className="news-item__content">
         <h3>{data.title}</h3>
         <div className="divider"></div>
