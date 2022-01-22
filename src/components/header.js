@@ -72,7 +72,7 @@ const Header = () => {
               height="20"
               viewBox="0 0 20 20"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
             >
               <path
                 d="M19 19.6673C19 14.5127 14.8213 10.334 9.66666 10.334C4.512 10.334 0.333328 14.5127 0.333328 19.6673"
