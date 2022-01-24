@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `https://imagesystems.cn/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://commandoproject.com/graphql`,
         schema: {
           requestConcurrency: 1,
           timeout: 90000,
