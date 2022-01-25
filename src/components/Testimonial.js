@@ -8,7 +8,7 @@ const TestimonialItem = ({ data }) => {
       <div className="testimonial-item__avatar">
         <img src={data.avatar.localFile.url} alt="avatar" />
       </div>
-      <div classNmae="testimonial-item-detail">
+      <div className="testimonial-item-detail">
         <div>
           <img src={Closequote} alt="closequote" />
         </div>
