@@ -66,7 +66,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <a href="#user">
+          <a href="#user" className="nav-item-auth">
             <svg
               width="20"
               height="20"
