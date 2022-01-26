@@ -1,7 +1,11 @@
 footer {
   background: #232323;
   .footer-nav {
-    padding: 72px 0;
+    padding-top: 180px;
+    padding-bottom: 60px;
+    @include mq("tablet", max) {
+      padding-top: 60px;
+    }
     .row > * {
       width: auto;
       @include mq("tablet", max) {
@@ -9,21 +13,28 @@ footer {
       }
     }
     .menu-type {
-      font-weight: bold;
-      font-size: 19px;
+      font-family: "Lato";
+      font-weight: 800;
+      font-size: 20px;
       line-height: 40px;
       color: white;
     }
     .menu-list {
+      max-width: 12.5%;
       padding: 15px;
+      @include mq("tablet", max) {
+        max-width: 100%;
+      }
     }
     ul {
       margin-top: 16px;
       li {
         padding-bottom: 8px;
         a {
-          font-weight: 500;
+          font-family: "Lato";
+          font-weight: 700;
           font-size: 16px;
+          line-height: 40px;
           color: #cdcdcd;
         }
       }
@@ -34,29 +45,43 @@ footer {
     padding: 72px 0;
     border-top: 1px solid #5a5a5a;
     .contact-label {
-      font-weight: bold;
+      font-family: "Lato";
+      font-weight: 800;
       font-size: 20px;
-      line-height: 28px;
+      line-height: 56px;
+      letter-spacing: 0.2px;
       color: white;
-      margin-right: 24px;
+      margin-right: 43px;
+      @include mq("tablet", max) {
+        margin-bottom: 20px;
+      }
     }
     .follow-us {
       display: flex;
       flex-wrap: wrap;
       li {
-        margin: 8px 24px 0 0;
+        margin-right: 40px;
+        @include mq("tablet", max) {
+          margin-right: 20px;
+        }
         p {
+          font-family: "Raleway";
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 16px;
           margin-top: 12px;
-          font-weight: 500;
-          font-size: 12px;
-          line-height: 14px;
           color: #e6ecef;
         }
       }
     }
     .contact-mail {
       display: flex;
-      flex-wrap: wrap;
+      @include mq("tablet", max) {
+        flex-direction: column;
+      }
+      li {
+        line-height: 100%;
+      }
       a {
         font-weight: bold;
         font-size: 20px;
@@ -69,6 +94,7 @@ footer {
     .contact-phone {
       display: flex;
       flex-wrap: wrap;
+      column-gap: 20px;
       a {
         font-weight: bold;
         font-size: 20px;
@@ -76,6 +102,20 @@ footer {
         letter-spacing: 0.2px;
         text-decoration: underline;
         color: $cyan;
+      }
+    }
+    .contact-container {
+      @include mq("tablet", max) {
+        flex-direction: column;
+      } 
+    }
+    .contact-credit {
+      p {
+        font-family: "Lato";
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        color: white;
       }
     }
   }

@@ -7,6 +7,7 @@ import {
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
+import ComMandoLogo from "../images/com-mando-logo.png"
 
 const menus = [
   {
@@ -87,7 +88,7 @@ const Footer = () => {
     <footer>
       <div className="container">
         <nav className="footer-nav">
-          <div className="row d-flex justify-content-between flex-wrap">
+          <div className="row d-flex justify-content-between flex-wrap flex-column flex-lg-row">
             {menus.map((item, idx) => (
               <div className="menu-list" key={idx}>
                 <p className="menu-type">{item.submenu}</p>
@@ -121,7 +122,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="d-flex align-items-center  flex-wrap">
+          <div className="contact-container d-flex pt-3">
             <p className="contact-label">Contact us</p>
             <ul className="contact-mail">
               {contacts.map((item, idx) => (
@@ -131,15 +132,19 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="contact-phone my-4">
-            <div className="d-flex align-items-center flex-wrap me-4">
+          <div className="contact-phone flex-wrap my-4">
+            <div className="contact-container d-flex me-4">
               <p className="contact-label">General Contact:</p>
               <a href="tel:1-888-225-7579">1-888-225-7579</a>
             </div>
-            <div className="d-flex align-items-center flex-wrap">
+            <div className="contact-container d-flex">
               <p className="contact-label">Customer Support:</p>
               <a href="tel: 1-888-225-7579">1-888-225-7579 ext 5</a>
             </div>
+          </div>
+          <div className="contact-credit d-flex align-items-center flex-wrap">
+            <p className="me-4">Developed by</p>
+            <img src={ComMandoLogo} className="mt-1" alt="Com-mando logo" />
           </div>
         </div>
       </div>
