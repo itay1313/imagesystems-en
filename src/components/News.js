@@ -3,12 +3,16 @@ import React from "react"
 const NewsItem = ({ data }) => {
   return (
     <div className="news-item">
-      <img src={data.featuredImage?.node.srcSet} alt="news" />
+      {data.featuredImage?.node.srcSet && (
+        <img srcSet={data.featuredImage?.node.srcSet} alt="news" />
+      )}
       <div className="news-item__content">
-        <h3>{data.title}</h3>
-        <div className="divider"></div>
-        <div dangerouslySetInnerHTML={{ __html: data.content }} />
-        <div className="news-item__author">
+        <h3 className="mb-0">{data.title}</h3>
+        <div
+          className="news-item__desc"
+          dangerouslySetInnerHTML={{ __html: data.content }}
+        />
+        <div className="news-item__author mt-1">
           <img
             className="author-photo"
             src={data.author.node.avatar.url}

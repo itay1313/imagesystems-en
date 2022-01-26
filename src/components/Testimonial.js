@@ -8,7 +8,7 @@ const TestimonialItem = ({ data }) => {
       <div className="testimonial-item__avatar">
         <img src={data.avatar.localFile.url} alt="avatar" />
       </div>
-      <div classNmae="testimonial-item-detail">
+      <div className="testimonial-item-detail">
         <div>
           <img src={Closequote} alt="closequote" />
         </div>
@@ -16,12 +16,14 @@ const TestimonialItem = ({ data }) => {
           className="testimonial-item-detail__text"
           dangerouslySetInnerHTML={{ __html: data.testimonialText }}
         />
-        <span className="testimonial-item-detail__name">
-          {data.testimonialTitle}
-        </span>
-        <span className="testimonial-item-detail__role">
-          {data.testimonialSubtitle}
-        </span>
+        <div className="testimonial-item-detail__people">
+          <span className="testimonial-item-detail__name">
+            {data.testimonialTitle}
+          </span>
+          <span className="testimonial-item-detail__role">
+            {data.testimonialSubtitle}
+          </span>
+        </div>
 
         {/* <StarRatings
               rating={data.stars}

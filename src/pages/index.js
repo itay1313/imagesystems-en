@@ -131,7 +131,7 @@ const IndexPage = ({ data }) => {
       <section className="products-section">
         <div className="container">
           <h2>Our Products</h2>
-          <div className="row justify-content-center">
+          <div className="row justify-content-start">
             {products.map((item, idx) => (
               <ProductTemplate key={idx} data={item} />
             ))}
@@ -155,29 +155,31 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="container mission-section">
-        <div className="row">
-          <div className="col-lg-7 mb-4">
-            <img
-              className="w-100"
-              src={homeQuery?.missionImage.localFile.url}
-              alt="mission"
-            />
-          </div>
-          <div className="col-lg-5 mission-section__detail">
-            <h2>{homeQuery?.missionTitle}</h2>
-            <div
-              className="my-5"
-              dangerouslySetInnerHTML={{ __html: homeQuery?.missionText }}
-            />
-            <Link className="btn-link" to={homeQuery?.missionUrl}>
-              Learn more
-            </Link>
+      <section className="mission-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-7 mb-4">
+              <img
+                className="w-100"
+                src={homeQuery?.missionImage.localFile.url}
+                alt="mission"
+              />
+            </div>
+            <div className="col-lg-5 mission-section__detail">
+              <h2 className="mb-0">{homeQuery?.missionTitle}</h2>
+              <div
+                className="my-5"
+                dangerouslySetInnerHTML={{ __html: homeQuery?.missionText }}
+              />
+              <Link className="btn-link" to={homeQuery?.missionUrl}>
+                Learn more
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="container news-section">
+      <section className="news-section">
         <div className="container">
           <h2>Latest News</h2>
           {
@@ -201,7 +203,7 @@ const IndexPage = ({ data }) => {
       <section className="testimonial-section">
         <div className="container">
           <h2>Testimonials</h2>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mx-5">
             {testimonials.map((item, idx) => (
               <TestimonialItem key={idx} data={item} />
             ))}

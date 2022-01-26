@@ -7,8 +7,8 @@ const Header = () => {
   const [hambugerActive, setHambugerActiveState] = useState(false)
   const [navMenuShow, setNavMenuShow] = useState({})
 
-  let humbugerClsName = "hamburger my-auto "
-  let navMenuClsName = "navbar-nav "
+  let humbugerClsName = "hamburger my-auto order-0"
+  let navMenuClsName = "navbar-nav order-lg-1 "
 
   if (hambugerActive) {
     humbugerClsName += "active"
@@ -29,7 +29,7 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expand-lg">
         <div className="container">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand order-1 order-lg-0" to="/">
             <img src={Logo} alt="logo" />
           </Link>
           <ul className={navMenuClsName}>
@@ -66,7 +66,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <a href="#user">
+          <a href="#user" className="nav-item-auth order-2">
             <svg
               width="20"
               height="20"

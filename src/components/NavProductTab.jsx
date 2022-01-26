@@ -46,7 +46,7 @@ const NavProductTab = () => {
     <div className="dropdown-content" role="presentation">
       <div className="container">
         <Tabs className="prod-tabs row">
-          <TabList className="prod-tabs__list col-3 p-0">
+          <TabList className="prod-tabs__list col-2 p-0">
             {prods.map((item, idx) => (
               <Tab key={idx}>
                 {item}
@@ -54,7 +54,7 @@ const NavProductTab = () => {
               </Tab>
             ))}
           </TabList>
-          <div className="col-9 bg-white pt-4 ps-5">
+          <div className="col-10 bg-white pt-4 ps-5">
             <TabPanel>
               <NavProductDetail products={temas} />
             </TabPanel>

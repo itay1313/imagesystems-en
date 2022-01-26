@@ -36,7 +36,7 @@ header {
             border: none;
             .react-tabs__tab {
               display: flex;
-              padding: 20px;
+              padding: 20px 60px;
               align-items: center;
               font-weight: 800;
               font-size: 14px;
@@ -44,6 +44,8 @@ header {
               text-transform: uppercase;
               color: $gray;
               bottom: 0;
+              font-family: "Raleway";
+              height: 60px;
               img {
                 margin-left: 10px;
               }
@@ -70,6 +72,7 @@ header {
             }
             &-content {
               p {
+                font-family: "Lato";
                 font-size: 14px;
                 line-height: 17px;
                 color: #000000;
@@ -174,6 +177,7 @@ header {
         display: flex;
         align-items: center;
         position: relative;
+        padding: 0 20px;
       }
       .nav-link {
         color: $white;
@@ -191,7 +195,7 @@ header {
           border-right: 5px solid transparent;
           border-top: 7px solid $cyan;
           top: 50%;
-          right: 5px;
+          right: 0px;
           transform: translateY(-50%);
         }
         @include mq("laptop") {
@@ -233,6 +237,15 @@ header {
             align-items: center;
           }
         }
+      }
+    }
+    .nav-item-auth {
+      display: flex;
+      gap: 16px;
+      span {
+        color: $cyan;
+        font-weight: 800;
+        text-transform: uppercase;
       }
     }
   }

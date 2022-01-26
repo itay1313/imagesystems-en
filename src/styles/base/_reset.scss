@@ -1,5 +1,5 @@
 .container {
   @include mq("laptop-wide") {
-    max-width: 1440px;
+    max-width: 1260px;
   }
 }
