@@ -11,11 +11,12 @@ const ProductItem = ({ data }) => {
             alt="product"
             className="product-item__img"
           />
-          <h3 className="product-item__title">{data.title}</h3>
+          <h3 className="product-item__title mb-0">{data.title}</h3>
           <div
-            className="product-item__contnet"
+            className="product-item__content"
             dangerouslySetInnerHTML={{ __html: data.excerpt }}
           />
+          <div className="product-item__link">Learn More</div>
         </Link>
       </div>
     </div>
