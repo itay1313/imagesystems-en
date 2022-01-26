@@ -316,14 +316,13 @@ section {
 .testimonial-section {
   padding: 60px 0;
   background: #fbfbfb;
-  @include mq("phone", max) {
-    height: 450px;
-  }
   h2 {
     margin-bottom: 60px;
   }
   .testimonial-item {
     padding: 40px 60px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-bottom: 40px;
     background-color: white;
     text-align: center;

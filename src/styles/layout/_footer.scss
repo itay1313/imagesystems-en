@@ -4,6 +4,9 @@ footer {
     padding: 72px 0;
     .row > * {
       width: auto;
+      @include mq("tablet", max) {
+        flex-direction: column;
+      }
     }
     .menu-type {
       font-weight: bold;

@@ -203,7 +203,7 @@ const IndexPage = ({ data }) => {
       <section className="testimonial-section">
         <div className="container">
           <h2>Testimonials</h2>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mx-5">
             {testimonials.map((item, idx) => (
               <TestimonialItem key={idx} data={item} />
             ))}
