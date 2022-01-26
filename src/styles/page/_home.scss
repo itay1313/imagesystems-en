@@ -162,10 +162,12 @@ section {
 }
 
 .mission-section {
+  padding: 80px 0 100px;
   &__detail {
-    // h2 {
-    //   border-bottom: 4px solid $cyan;
-    // }
+    h2 {
+      font-family: "Lato";
+      font-weight: 800;
+    }
     p {
       font-size: 24px;
       line-height: 36px;
@@ -218,7 +220,7 @@ section {
       }
     }
     &__link {
-      color: #00B1CF;
+      color: $cyan;
       font-family: "Lato";
       font-size: 20px;
       font-weight: 800;
@@ -235,6 +237,7 @@ section {
 }
 
 .news-section {
+  padding: 80px 0 100px;
   h2 {
     margin-bottom: 50px;
   }

@@ -53,10 +53,11 @@
     }
   }
   &-link {
+    font-family: "Lato";
     font-size: 24px;
     line-height: 36px;
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: 400;
+    text-decoration: none;
     color: $cyan;
   }
 }

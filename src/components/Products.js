@@ -16,7 +16,7 @@ const ProductItem = ({ data }) => {
             className="product-item__content"
             dangerouslySetInnerHTML={{ __html: data.excerpt }}
           />
-          <div className="product-item__link">Learn More</div>
+          <div className="product-item__link">Learn more</div>
         </Link>
       </div>
     </div>
