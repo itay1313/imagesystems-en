@@ -320,7 +320,7 @@ section {
     height: 450px;
   }
   h2 {
-    margin-bottom: 160px;
+    margin-bottom: 60px;
   }
   .testimonial-item {
     padding: 40px 60px;
@@ -331,30 +331,44 @@ section {
     display: flex;
     align-items: center;
     text-align: left;
+    @include mq("tablet", max) {
+      flex-direction: column;
+    }
     &__avatar {
       padding-right: 50px;
+      img {
+        width: 120px;
+        object-fit: cover;
+        @include mq("tablet", max) {
+          margin-bottom: 20px;
+        }
+      }
     }
     &-detail {
       display: flex;
       flex-direction: column;
 
       &__name {
-        font-family: "GT Walsheim Pro";
+        font-family: "Lato";
         font-weight: 800;
         font-size: 24px;
         line-height: 40px;
+        padding-right: 20px;
       }
       &__role {
         font-family: "GT Walsheim Pro";
         font-weight: normal;
         font-size: 20px;
         line-height: 56px;
-        padding-left: 20px;
+        letter-spacing: 0.2px;
+        @include mq("tablet", max) {
+          display: block;
+        }
       }
       &__text {
         p {
-          margin: 16px 0;
-          font-family: "GT Walsheim Pro";
+          margin: 20px 0;
+          font-family: "Lato";
           font-style: normal;
           font-weight: normal;
           font-size: 24px;
