@@ -18,11 +18,11 @@ section {
     &-slide {
       padding: 0 60px;
       @extend %fixedContent;
-      @include mq("phone", max) {
-        padding: 0 12px;
+      @include mq("tablet", max) {
+        padding: 0;
       }
       .btn-play {
-        @include mq("phone", max) {
+        @include mq("tablet", max) {
           display: none;
         }
       }
@@ -33,24 +33,40 @@ section {
       height: 100%;
     }
     &-title {
-      font-weight: bold;
+      font-weight: 700;
       font-size: 96px;
       line-height: 113px;
       color: white;
-      @include mq("laptop", max) {
-        font-size: 36px;
-        line-height: 43px;
+      @include mq("tablet", max) {
+        font-size: 64px;
+        line-height: 75px;
       }
     }
     &-content {
-      margin: 40px 0 60px;
-      font-family: "Apercu";
-      font-weight: 500;
-      font-size: 32px;
-      line-height: 39px;
+      margin: 20px 0 60px;
+      font-family: "Raleway";
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 33px;
       color: white;
       @include mq("tablet", max) {
-        font-size: 18px;
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    &-btn {
+      padding: 0;
+      @include mq("tablet", max) {
+        padding: 0 30px;
+      }
+      a {
+        display: inline-block;
+        padding: 30px 70px;
+        @include mq("tablet", max) {
+          padding: 30px;
+          text-align: center;
+          width: 100%;
+        }
       }
     }
   }
