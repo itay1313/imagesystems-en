@@ -332,6 +332,9 @@ section {
     text-align: left;
     @include mq("tablet", max) {
       flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 40px;
     }
     &__avatar {
       padding-right: 50px;
