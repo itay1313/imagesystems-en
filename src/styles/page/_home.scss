@@ -169,7 +169,7 @@ section {
       font-weight: 800;
     }
     p {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 36px;
       color: #535353;
     }
@@ -214,7 +214,7 @@ section {
       p {
         font-family: "Lato";
         font-size: 20px;
-        font-weight: 800;
+        font-weight: 400;
         line-height: 32px;
         color: #535353;
       }
@@ -254,7 +254,9 @@ section {
       padding: 40px 20px;
       background: rgba(239, 247, 249, 0.6);
       h3 {
+        font-family: "Lato";
         font-size: 32px;
+        font-weight: 800;
         line-height: 40px;
       }
       .divider {
@@ -293,7 +295,12 @@ section {
       }
     }
     &__desc {
-      padding: 20px 0;
+      p {
+        font-family: "Lato";
+        font-size: 20px;
+        line-height: 30px;
+        padding: 20px 0;
+      }
     }
   }
   .arrow-btns {
