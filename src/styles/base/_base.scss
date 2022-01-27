@@ -54,11 +54,11 @@ p {
   span {
     position: relative;
     display: block;
-    width: 18px;
+    width: 36px;
     height: 2px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     border-radius: 4px;
-    background: $cyan;
+    background: white;
     z-index: 1;
     transform-origin: 0px 0px;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
@@ -72,6 +72,15 @@ p {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  div {
+    color: $cyan;
+    font-family: "Raleway";
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 12px;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   &.active span {

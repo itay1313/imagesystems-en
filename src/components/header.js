@@ -101,6 +101,7 @@ const Header = () => {
             <span></span>
             <span></span>
             <span></span>
+            <div>Menu</div>
           </div>
         </div>
       </nav>

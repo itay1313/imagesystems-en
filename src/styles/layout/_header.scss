@@ -6,9 +6,15 @@ header {
   top: 0;
   border-width: 0;
   .navbar {
+    &-brand {
+      margin-right: 0;
+      @include mq("tablet", max) {
+        margin-left: 32px;
+      }
+    }
     padding-top: 0;
     padding-bottom: 0;
-    @include mq("phone", max) {
+    @include mq("tablet", max) {
       padding: 15px 0;
     }
     .hamburger {
@@ -242,6 +248,9 @@ header {
     .nav-item-auth {
       display: flex;
       gap: 16px;
+      @include mq("tablet") {
+        padding-bottom: 6px;
+      }
       span {
         color: $cyan;
         font-weight: 800;
