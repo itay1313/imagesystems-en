@@ -1,4 +1,4 @@
-import logo from "../images/logo.svg"
+import logo from "../images/svgs/logo.svg"
 import avatar from "../images/avatar.jpg"
 import closequote from "../images/closequote.png"
 

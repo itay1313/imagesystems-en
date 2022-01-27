@@ -30,7 +30,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <Link className="navbar-brand order-1 order-lg-0" to="/">
-            <img src={Logo} alt="logo" />
+            <Logo />
           </Link>
           <ul className={navMenuClsName}>
             <li
@@ -101,6 +101,7 @@ const Header = () => {
             <span></span>
             <span></span>
             <span></span>
+            <div>Menu</div>
           </div>
         </div>
       </nav>

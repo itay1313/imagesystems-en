@@ -70,6 +70,9 @@ section {
       }
     }
   }
+  .slick-slider {
+    margin: 0;
+  }
   .slick-arrow {
     @include mq("tablet", max) {
       display: none !important;
@@ -169,7 +172,7 @@ section {
       font-weight: 800;
     }
     p {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 36px;
       color: #535353;
     }
@@ -183,10 +186,10 @@ section {
   //   border-bottom: 4px solid $cyan;
   // }
   .product-item {
-    margin-top: 30px;
+    margin: 0 12px;
     background-color: white;
     cursor: pointer;
-    @include mq("phone", max) {
+    @include mq("tablet", max) {
       margin-top: 40px;
     }
     &__title {
@@ -214,7 +217,7 @@ section {
       p {
         font-family: "Lato";
         font-size: 20px;
-        font-weight: 800;
+        font-weight: 400;
         line-height: 32px;
         color: #535353;
       }
@@ -254,7 +257,9 @@ section {
       padding: 40px 20px;
       background: rgba(239, 247, 249, 0.6);
       h3 {
+        font-family: "Lato";
         font-size: 32px;
+        font-weight: 800;
         line-height: 40px;
       }
       .divider {
@@ -293,23 +298,13 @@ section {
       }
     }
     &__desc {
-      padding: 20px 0;
+      p {
+        font-family: "Lato";
+        font-size: 20px;
+        line-height: 30px;
+        padding: 20px 0;
+      }
     }
-  }
-  .arrow-btns {
-    text-align: right;
-    margin-top: 50px;
-    .custom-arrow {
-      margin-right: 20px;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: $cyan;
-      border: unset;
-    }
-  }
-  .slick-slider {
-    margin: 0 -12px;
   }
 }
 
@@ -332,6 +327,9 @@ section {
     text-align: left;
     @include mq("tablet", max) {
       flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 40px;
     }
     &__avatar {
       padding-right: 50px;
@@ -374,6 +372,90 @@ section {
           line-height: 29px;
         }
       }
+    }
+  }
+}
+
+.custom-arrow {
+  display: inline;
+  position: absolute;
+  top: 100%;
+  text-align: center;
+  margin-top: 60px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid $cyan; 
+  background-color: #F5FAFB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    cursor: pointer;
+  }
+  &.left {
+    left: 24%;
+    @include mq("tablet", max) {
+      left: 20%;
+    }
+    @include mq("phone", max) {
+      left: 5%;
+    }
+  }
+  &.right {
+    right: 24%;
+    @include mq("tablet", max) {
+      right: 20%;
+    }
+    @include mq("phone", max) {
+      right: 5%;
+    }
+  }
+}
+
+.products-section, .news-section {
+  .slick-slider {
+    margin: 0 -12px 150px -12px;
+  }
+  .ft-slick__dots--custom {
+    width: 100%;
+    height: 4px;
+    background-color: #e5e7e9;
+  }
+  .slick-dots {
+    bottom: -105px;
+    margin-top: 60px;
+    li {
+      height: 4px;
+      margin: 0;
+      width: 60px;
+      @include mq("tablet", max) {
+        width: 35px;
+      }
+      @include mq("phone", max) {
+        width: 30px;
+      }
+      &:first-child {
+        .ft-slick__dots--custom {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+      }
+      &:last-child {
+        .ft-slick__dots--custom {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+      &.slick-active {
+        position: relative;
+        display: inline-block;
+        .ft-slick__dots--custom {
+          background-color: $cyan;
+          border-radius: 4px;
+          overflow: hidden;
+        }
+      } 
     }
   }
 }
