@@ -38,6 +38,28 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   </button>
 )
 
+const NewsArrowLeft = ({ ...props }) => (
+  <button
+    {...props}
+    className="custom-arrow left"
+    aria-hidden="true"
+    type="button"
+  >
+    <img src={LeftBtn} alt="left arrow" />
+  </button>
+)
+
+const NewsArrowRight = ({ ...props }) => (
+  <button
+    {...props}
+    className="custom-arrow right"
+    aria-hidden="true"
+    type="button"
+  >
+    <img src={RightBtn} alt="right arrow" />
+  </button>
+)
+
 const IndexPage = ({ data }) => {
   const hero_settings = {
     dots: true,
@@ -79,10 +101,15 @@ const IndexPage = ({ data }) => {
     ],
   }
   const news_settings = {
+    dots: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
+    appendDots: dots => <ul>{dots}</ul>,
+    customPaging: () => <div className="ft-slick__dots--custom"></div>,
+    prevArrow: <NewsArrowLeft />,
+    nextArrow: <NewsArrowRight />,
     responsive: [
       {
         breakpoint: 1024,
@@ -102,12 +129,6 @@ const IndexPage = ({ data }) => {
   }
 
   const slider = useRef()
-  const next = () => {
-    slider.current.slickNext()
-  }
-  const previous = () => {
-    slider.current.slickPrev()
-  }
 
   const homeQuery = data?.allWpPage.nodes[0].homepageQuery
   const heroSlides = homeQuery.heroSlider
@@ -131,14 +152,13 @@ const IndexPage = ({ data }) => {
       <section className="products-section">
         <div className="container">
           <h2>Our Products</h2>
-          <div className="row justify-content-start">
-            {products.map((item, idx) => (
-              <ProductTemplate key={idx} data={item} />
-            ))}
-            {/* <div className="text-center mt-5">
-              <button className="btn-primary">Learn more</button>
-            </div> */}
-          </div>
+          {
+            <Slider ref={c => (slider.current = c)} {...news_settings}>
+              {products.map((item, idx) => (
+                <ProductTemplate key={idx} data={item} />
+              ))}
+            </Slider>
+          }
         </div>
       </section>
 
@@ -189,14 +209,6 @@ const IndexPage = ({ data }) => {
               ))}
             </Slider>
           }
-          <div className="arrow-btns">
-            <button className="custom-arrow" onClick={previous}>
-              <img src={LeftBtn} alt="left arrow" />
-            </button>
-            <button className="custom-arrow" onClick={next}>
-              <img src={RightBtn} alt="right arrow" />
-            </button>
-          </div>
         </div>
       </section>
 
@@ -263,7 +275,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allWpProduct(limit: 3, sort: { fields: date, order: DESC }) {
+    allWpProduct(limit: 6, sort: { fields: date, order: DESC }) {
       nodes {
         title
         excerpt
