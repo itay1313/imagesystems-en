@@ -301,11 +301,11 @@ section {
     margin-top: 50px;
     .custom-arrow {
       margin-right: 20px;
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      background-color: $cyan;
-      border: unset;
+      border: 1px solid $cyan; 
+      background-color: #F5FAFB;
     }
   }
   .slick-slider {
