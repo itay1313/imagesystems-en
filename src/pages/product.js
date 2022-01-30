@@ -17,7 +17,7 @@ const ProductPage = ({ pageContext }) => {
             className="product-img"
           />
           <div
-            className="product-contnet"
+            className="product-content"
             dangerouslySetInnerHTML={{ __html: product?.excerpt }}
           />
         </div>
