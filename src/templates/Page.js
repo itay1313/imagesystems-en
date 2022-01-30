@@ -162,7 +162,7 @@ const PageTemplate = ({ data }) => {
             <h2>Key features</h2>
             {
               <Slider ref={c => (slider.current = c)} {...features_settings}>
-                {productQuery?.keyFeatures.map((item, index) => (
+                {productQuery?.keyFeatures?.map((item, index) => (
                   <FeaturesTemplate data={item} key={index} />
                 ))}
               </Slider>
