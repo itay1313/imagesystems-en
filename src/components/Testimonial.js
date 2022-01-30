@@ -6,11 +6,11 @@ const TestimonialItem = ({ data }) => {
   return (
     <div className="testimonial-item">
       <div className="testimonial-item__avatar">
-        <img src={data.avatar.localFile.url} alt="avatar" />
+        <img src={data.avatar.localFile.url} loading="lazy" alt="avatar" />
       </div>
       <div className="testimonial-item-detail">
         <div>
-          <img src={Closequote} alt="closequote" />
+          <img src={Closequote} loading="lazy" alt="closequote" />
         </div>
         <div
           className="testimonial-item-detail__text"

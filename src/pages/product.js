@@ -13,6 +13,7 @@ const ProductPage = ({ pageContext }) => {
           <h1 className="product-title">{product?.title}</h1>
           <img
             src={product?.featuredImage.node.sourceUrl}
+            loading="lazy"
             alt="product"
             className="product-img"
           />

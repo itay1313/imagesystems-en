@@ -19,6 +19,7 @@ const NavProductDetail = ({ products }) => {
           <Tab key={idx}>
             <img
               className="product-img"
+              loading="lazy"
               src={item.featuredImage?.node.sourceUrl}
               alt="product"
             />

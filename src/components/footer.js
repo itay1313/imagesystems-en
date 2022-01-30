@@ -144,7 +144,12 @@ const Footer = () => {
           </div>
           <div className="contact-credit d-flex align-items-center flex-wrap">
             <p className="me-4">Developed by</p>
-            <img src={ComMandoLogo} className="mt-1" alt="Com-mando logo" />
+            <img
+              src={ComMandoLogo}
+              loading="lazy"
+              className="mt-1"
+              alt="Com-mando logo"
+            />
           </div>
         </div>
       </div>

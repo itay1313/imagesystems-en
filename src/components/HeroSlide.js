@@ -6,6 +6,7 @@ const HeroSlide = ({ data }) => {
     <div className="position-relative hero-slides">
       <img
         src={data.background.localFile.url}
+        loading="lazy"
         alt="hero slide"
         className="hero-img"
       />

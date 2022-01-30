@@ -50,7 +50,7 @@ const NavProductTab = () => {
             {prods.map((item, idx) => (
               <Tab key={idx}>
                 {item}
-                <img src={ChevronRight} alt="chevron right" />
+                <img src={ChevronRight} loading="lazy" alt="chevron right" />
               </Tab>
             ))}
           </TabList>
