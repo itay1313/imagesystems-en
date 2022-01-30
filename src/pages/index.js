@@ -19,7 +19,7 @@ const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     aria-disabled={currentSlide === 0 ? true : false}
     type="button"
   >
-    <img src={LeftArrow} alt="left arrow" />
+    <img src={LeftArrow} loading="lazy" alt="left arrow" />
   </button>
 )
 
@@ -34,7 +34,7 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     aria-disabled={currentSlide === slideCount - 1 ? true : false}
     type="button"
   >
-    <img src={RightArrow} alt="right arrow" />
+    <img src={RightArrow} loading="lazy" alt="right arrow" />
   </button>
 )
 
@@ -45,7 +45,7 @@ const NewsArrowLeft = ({ ...props }) => (
     aria-hidden="true"
     type="button"
   >
-    <img src={LeftBtn} alt="left arrow" />
+    <img src={LeftBtn} loading="lazy" alt="left arrow" />
   </button>
 )
 
@@ -56,7 +56,7 @@ const NewsArrowRight = ({ ...props }) => (
     aria-hidden="true"
     type="button"
   >
-    <img src={RightBtn} alt="right arrow" />
+    <img src={RightBtn} loading="lazy" alt="right arrow" />
   </button>
 )
 
@@ -168,7 +168,11 @@ const IndexPage = ({ data }) => {
           <Slider {...logo_settings}>
             {logoSlides.map((item, idx) => (
               <div className="trust-img" key={idx}>
-                <img src={item.logo.localFile.url} alt="trust logos" />
+                <img
+                  src={item.logo.localFile.url}
+                  loading="lazy"
+                  alt="trust logos"
+                />
               </div>
             ))}
           </Slider>
@@ -180,6 +184,7 @@ const IndexPage = ({ data }) => {
           <div className="row">
             <div className="col-lg-7 mb-4">
               <img
+                loading="lazy"
                 className="w-100"
                 src={homeQuery?.missionImage.localFile.url}
                 alt="mission"

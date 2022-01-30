@@ -14,6 +14,7 @@ const NewsItem = ({ data }) => {
         />
         <div className="news-item__author mt-1">
           <img
+            loading="lazy"
             className="author-photo"
             src={data.author.node.avatar.url}
             alt="author"

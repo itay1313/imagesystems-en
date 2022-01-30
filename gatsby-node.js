@@ -20,19 +20,20 @@ exports.createPages = async ({ graphql, actions }) => {
               sourceUrl
             }
           }
+          slug
         }
       }
     }
   `)
 
-  const productTemplate = path.resolve(`./src/pages/product.js`)
+  const productTemplate = path.resolve(`./src/templates/Page.js`)
 
   allProducs.forEach(product => {
     createPage({
       path: product.uri,
       component: productTemplate,
       context: {
-        product: product,
+        slug: product.slug,
       },
     })
   })

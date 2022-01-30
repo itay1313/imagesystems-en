@@ -6,6 +6,7 @@ const ProductItem = ({ data }) => {
     <div className="product-item">
       <Link to={data.uri}>
         <img
+          loading="lazy"
           src={data.featuredImage.node.sourceUrl}
           alt="product"
           className="product-item__img"
