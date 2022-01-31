@@ -308,6 +308,7 @@ export const pageQuery = graphql`
             name
           }
         }
+        slug
       }
     }
   }
