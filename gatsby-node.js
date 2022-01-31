@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const {
     data: {
       allWpProduct: { nodes: allProducs },
+      allWpCategory: { nodes: allCategory },
     },
   } = await graphql(`
     query {
@@ -23,10 +24,17 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
+      allWpCategory {
+        nodes {
+          slug
+          uri
+        }
+      }
     }
   `)
 
-  const productTemplate = path.resolve(`./src/templates/Page.js`)
+  const productTemplate = path.resolve(`./src/templates/Product.js`)
+  const categoryTemplate = path.resolve(`./src/templates/Category.js`)
 
   allProducs.forEach(product => {
     createPage({
@@ -34,6 +42,16 @@ exports.createPages = async ({ graphql, actions }) => {
       component: productTemplate,
       context: {
         slug: product.slug,
+      },
+    })
+  })
+
+  allCategory.forEach(category => {
+    createPage({
+      path: category.uri,
+      component: categoryTemplate,
+      context: {
+        slug: category.slug,
       },
     })
   })
