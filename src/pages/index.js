@@ -270,7 +270,6 @@ export const pageQuery = graphql`
             testimonialTitle
             testimonialText
             testimonialSubtitle
-            stars
             avatar {
               localFile {
                 url
@@ -309,6 +308,7 @@ export const pageQuery = graphql`
             name
           }
         }
+        slug
       }
     }
   }
