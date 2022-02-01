@@ -3,12 +3,12 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // query content for WordPress posts
   const {
     data: {
       allWpProduct: { nodes: allProducs },
       allWpCategory: { nodes: allCategory },
       allWpPost: { nodes: allPosts },
+      allWpPage: { nodes: allPages },
     },
   } = await graphql(`
     query {
@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
       allWpCategory(
-        filter: { slug: { in: ["dic", "scanner", "tema", "trackeye] } }
+        filter: { slug: { in: ["dic", "scanner", "tema", "trackeye"] } }
       ) {
         nodes {
           slug
@@ -46,12 +46,26 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWpPage(filter: { slug: { ne: "homepage" } }) {
+        nodes {
+          title
+          content
+          slug
+          uri
+          featuredImage {
+            node {
+              srcSet
+            }
+          }
+        }
+      }
     }
   `)
 
   const productTemplate = path.resolve(`./src/templates/Product.js`)
   const categoryTemplate = path.resolve(`./src/templates/Category.js`)
   const postTemplate = path.resolve(`./src/templates/Post.js`)
+  const pageTemplate = path.resolve(`./src/templates/Page.js`)
 
   allProducs.forEach(product => {
     createPage({
@@ -77,6 +91,16 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/news${post.uri}`,
       component: postTemplate,
+      context: {
+        slug: post.slug,
+      },
+    })
+  })
+
+  allPages.forEach(post => {
+    createPage({
+      path: `/pages/${post.slug}`,
+      component: pageTemplate,
       context: {
         slug: post.slug,
       },
