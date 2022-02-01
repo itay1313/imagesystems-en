@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const PostTemplate = ({ data }) => {
-  const { title, content, featuredImage } = data.wpPost
+  const { author, title, content, featuredImage } = data.wpPost
   return (
     <Layout>
       <div className="post-section">
@@ -18,18 +18,29 @@ const PostTemplate = ({ data }) => {
             />
           </div>
         </section>
+        <section>
+          <div className="container my-5 py-5">
+            <h1>{title}</h1>
+            <div className="post-section__author mt-1">
+              <img
+                loading="lazy"
+                className="author-photo"
+                src={author?.node?.avatar?.url}
+                alt="author"
+              />
+              <div className="author-detail">
+                <h4>{author?.node?.name}</h4>
+              </div>
+            </div>
+            <div
+              className="post-section__content my-5"
+              dangerouslySetInnerHTML={{
+                __html: content,
+              }}
+            />
+          </div>
+        </section>
       </div>
-      <section>
-        <div className="container my-5 py-5">
-          <h1>{title}</h1>
-          <div
-            className="hero-content"
-            dangerouslySetInnerHTML={{
-              __html: content,
-            }}
-          />
-        </div>
-      </section>
     </Layout>
   )
 }
