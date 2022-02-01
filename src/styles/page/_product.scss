@@ -3,14 +3,16 @@
   .product-title {
     text-align: center;
   }
-  .product-img {
-  }
   .product-content {
     width: 100%;
     .gatsby-image-wrapper {
       width: 100%;
     }
   }
+}
+
+.product-img {
+  object-fit: cover;
 }
 
 .product-section {

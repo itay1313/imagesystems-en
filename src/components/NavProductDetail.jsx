@@ -1,9 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 
 const NavProductDetail = ({ products }) => {
-  console.log(products)
-
   return (
     <Tabs className="prod__detail-tab">
       {products.map((item, idx) => (
@@ -17,13 +16,15 @@ const NavProductDetail = ({ products }) => {
       <TabList>
         {products.map((item, idx) => (
           <Tab key={idx}>
-            <img
-              className="product-img"
-              loading="lazy"
-              src={item.featuredImage?.node.sourceUrl}
-              alt="product"
-            />
-            <p className="product-name">{item.title}</p>
+            <Link to={item.uri}>
+              <img
+                className="product-img"
+                loading="lazy"
+                src={item.featuredImage?.node.sourceUrl}
+                alt="product"
+              />
+              <p className="product-name">{item.title}</p>
+            </Link>
           </Tab>
         ))}
       </TabList>
