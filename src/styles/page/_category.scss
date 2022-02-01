@@ -1,0 +1,60 @@
+.category-page {
+  .hero {
+    &-title {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 85px;
+    }
+  }
+  .category-header {
+    h1 {
+      font-family: "Lato";
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 70px;
+    }
+    p {
+      font-family: "Lato";
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+  .category-content {
+    background-color: #f5f5f5;
+    .card-item {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      margin-bottom: 2rem;
+      &__content {
+        padding: 40px 20px;
+        h3 {
+          font-family: "Raleway";
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 48px;
+        }
+        p {
+          font-family: "Lato";
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 32px;
+          padding: 1rem 0;
+        }
+        a {
+          color: $cyan;
+          font-family: "Lato";
+          font-size: 20px;
+          font-weight: 800;
+          line-height: 32px;
+        }
+      }
+      img {
+        object-fit: cover;
+        height: 420px;
+        width: 100%;
+      }
+    }
+  }
+}

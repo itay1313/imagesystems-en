@@ -9,6 +9,7 @@ import rightBtn from "../images/right.png"
 import chevronRight from "../images/chevron-right.png"
 
 import scanner from "../images/scanner.png"
+import bgCategory from "../images/bg-category.png"
 
 export const Logo = logo
 export const Avatar = avatar
@@ -21,3 +22,4 @@ export const RightBtn = rightBtn
 export const ChevronRight = chevronRight
 
 export const Scanner = scanner
+export const BgCategory = bgCategory
