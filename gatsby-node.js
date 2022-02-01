@@ -25,7 +25,9 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
-      allWpCategory {
+      allWpCategory(
+        filter: { slug: { in: ["dic", "scanner", "tema", "trackeye] } }
+      ) {
         nodes {
           slug
           uri
