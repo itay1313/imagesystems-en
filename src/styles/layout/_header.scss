@@ -89,12 +89,12 @@ header {
             margin-top: 50px;
             border-bottom: unset;
             .react-tabs__tab {
+              border: none;
+              border-radius: unset;
               opacity: 0.7;
-
-              &--selected {
+              transition: opacity 0.5s ease-in;
+              &:hover {
                 opacity: 1;
-                border: none;
-                border-radius: unset;
               }
             }
           }

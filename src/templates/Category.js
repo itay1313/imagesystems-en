@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
@@ -18,7 +18,7 @@ const CategoryTemplate = ({ data }) => {
               <div className="d-flex flex-column">
                 <h2 className="mb-0">{name}</h2>
                 {nodes?.map(node => (
-                  <>
+                  <Link to={node.uri} key={node.id}>
                     <h3>{node.title}</h3>
                     <div
                       className="hero-content"
@@ -26,7 +26,7 @@ const CategoryTemplate = ({ data }) => {
                         __html: node.content,
                       }}
                     />
-                  </>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -49,6 +49,7 @@ export const query = graphql`
           slug
           title
           content
+          uri
         }
       }
     }
