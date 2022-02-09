@@ -32,7 +32,7 @@ const NavProductDetail = ({ products }) => {
       {products.map((item, idx) => (
         <TabPanel key={idx}>
           <div
-            className="product-content"
+            className="prod__detail-tab__content"
             dangerouslySetInnerHTML={{ __html: item?.excerpt }}
           />
         </TabPanel>
