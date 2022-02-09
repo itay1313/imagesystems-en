@@ -65,9 +65,12 @@ const IndexPage = ({ data }) => {
     dots: true,
     infinite: true,
     arrows: false,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
   }
   const logo_settings = {
     speed: 500,
@@ -99,6 +102,10 @@ const IndexPage = ({ data }) => {
         },
       },
     ],
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
   }
   const news_settings = {
     dots: true,
@@ -126,6 +133,10 @@ const IndexPage = ({ data }) => {
         },
       },
     ],
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
   }
 
   const slider = useRef()
