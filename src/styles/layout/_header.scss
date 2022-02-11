@@ -14,7 +14,7 @@ header {
     }
     padding-top: 0;
     padding-bottom: 0;
-    @include mq("tablet", max) {
+    @include mq("laptop", max) {
       padding: 15px 0;
     }
     .hamburger {
