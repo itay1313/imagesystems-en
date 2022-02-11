@@ -16,6 +16,23 @@
       padding: 15px 35px;
     }
   }
+  &-secondary {
+    background-color: transparent;
+    border: 1px solid #00b1cf;
+    border-radius: 80px;
+    color: #00b1cf;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 30px 70px;
+    @include mq("tablet", max) {
+      padding: 15px 35px;
+    }
+    &:hover {
+      background-color: #00b1cf;
+      border-color: #00b1cf;
+    }
+  }
   &-login {
     font-weight: bold;
     font-size: 16px;

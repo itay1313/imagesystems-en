@@ -1,6 +1,6 @@
 import React from "react"
 import { Closequote } from "../utils/imgImport"
-import StarRatings from "react-star-ratings"
+// import StarRatings from "react-star-ratings"
 
 const TestimonialItem = ({ data }) => {
   return (

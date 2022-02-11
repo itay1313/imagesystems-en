@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Slider from "react-slick"
 
 import Layout from "../components/layout"
@@ -167,6 +167,12 @@ const PageTemplate = ({ data }) => {
                 ))}
               </Slider>
             }
+            <div className="text-center">
+              <Link className="btn-secondary" to="/category">
+                Learn More
+              </Link>
+            </div>
+
           </div>
         </section>
       </div>
