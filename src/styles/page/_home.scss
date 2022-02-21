@@ -1,6 +1,7 @@
 main {
   // @extend %topGap;
 }
+
 section {
   // @include mq("phone", max) {
   //   margin-bottom: 40px;
@@ -11,37 +12,45 @@ section {
   .hero {
     &-slides {
       height: 90vh;
+
       @include mq("tablet", max) {
         height: 90vh;
       }
     }
+
     &-slide {
       padding: 0 60px;
       @extend %fixedContent;
+
       @include mq("tablet", max) {
         padding: 0;
       }
+
       .btn-play {
         @include mq("tablet", max) {
           display: none;
         }
       }
     }
+
     &-img {
       object-fit: cover;
       width: 100%;
       height: 100%;
     }
+
     &-title {
       font-weight: 700;
       font-size: 96px;
       line-height: 113px;
       color: white;
+
       @include mq("tablet", max) {
         font-size: 64px;
         line-height: 75px;
       }
     }
+
     &-content {
       margin: 20px 0 60px;
       font-family: "Raleway";
@@ -49,19 +58,24 @@ section {
       font-size: 28px;
       line-height: 33px;
       color: white;
+
       @include mq("tablet", max) {
         font-size: 24px;
         line-height: 28px;
       }
     }
+
     &-btn {
       padding: 0;
+
       @include mq("tablet", max) {
         padding: 0 30px;
       }
+
       a {
         display: inline-block;
         padding: 30px 70px;
+
         @include mq("tablet", max) {
           padding: 30px;
           text-align: center;
@@ -70,22 +84,27 @@ section {
       }
     }
   }
+
   .slick-slider {
     margin: 0;
   }
+
   .slick-arrow {
     @include mq("tablet", max) {
       display: none !important;
     }
   }
+
   .slick-prev,
   .slick-next {
     &::before {
       color: $cyan;
     }
   }
+
   .slick-dots {
     bottom: 23px;
+
     li {
       button {
         &::before {
@@ -94,6 +113,7 @@ section {
         }
       }
     }
+
     .slick-active {
       button {
         &::before {
@@ -108,6 +128,7 @@ section {
   margin-bottom: 75px;
   padding: 80px 0 100px;
   background-color: #f9fbfc;
+
   h2 {
     font-family: "Lato";
     text-align: center;
@@ -116,32 +137,41 @@ section {
     line-height: 56px;
     letter-spacing: 0.2px;
   }
+
   .slick-slider {
     margin: 48px 0;
+
     .slick-list {
       margin: 0 240px;
+
       @include mq("laptop-wide", max) {
         margin: 0 50px;
       }
     }
+
     .slick-track {
       display: flex;
       align-items: center;
     }
+
     .trust-img {
       height: 100%;
+
       img {
         margin: auto;
-        width: 160px;
+        max-width: 160px;
         // height: 35px;
       }
     }
+
     .slick-arrow {
       width: 42px;
       height: auto;
+
       &::before {
         font-size: 0;
       }
+
       img {
         @include mq("laptop", max) {
           width: 25px;
@@ -149,14 +179,18 @@ section {
         }
       }
     }
+
     .slick-next {
       right: 40px;
+
       @include mq("laptop", max) {
         right: 20px;
       }
     }
+
     .slick-prev {
       left: 40px;
+
       @include mq("laptop", max) {
         left: 20px;
       }
@@ -166,11 +200,13 @@ section {
 
 .mission-section {
   padding: 80px 0 100px;
+
   &__detail {
     h2 {
       font-family: "Lato";
       font-weight: 800;
     }
+
     p {
       font-size: 20px;
       line-height: 36px;
@@ -182,6 +218,7 @@ section {
 .products-section {
   background: #ffffff;
   padding: 100px 0;
+
   // h2 {
   //   border-bottom: 4px solid $cyan;
   // }
@@ -189,9 +226,11 @@ section {
     margin: 0 12px;
     background-color: white;
     cursor: pointer;
+
     @include mq("tablet", max) {
       margin-top: 40px;
     }
+
     &__title {
       font-family: "Raleway";
       font-size: 36px;
@@ -201,19 +240,23 @@ section {
       width: 100%;
       color: #535353;
     }
+
     &__img {
       width: 100%;
       height: 420px;
       object-fit: cover;
+
       @include mq("phone", max) {
         height: auto;
       }
     }
+
     &__content {
       margin-top: 10px;
       font-size: 20px;
       line-height: 28px;
       min-height: 170px;
+
       p {
         font-family: "Lato";
         font-size: 20px;
@@ -222,6 +265,7 @@ section {
         color: #535353;
       }
     }
+
     &__link {
       color: $cyan;
       font-family: "Lato";
@@ -241,49 +285,61 @@ section {
 
 .news-section {
   padding: 80px 0 100px;
+
   h2 {
     margin-bottom: 50px;
   }
+
   .news-item {
     margin: 0 12px;
+
     @include mq("phone", max) {
       padding: 0;
     }
+
     img {
       width: 100%;
       object-fit: cover;
     }
+
     &__content {
       padding: 40px 20px;
       background: rgba(239, 247, 249, 0.6);
+
       h3 {
         font-family: "Lato";
         font-size: 32px;
         font-weight: 800;
         line-height: 40px;
       }
+
       .divider {
         width: 60%;
         height: 4px;
         background: #00b1cf;
         margin: 15px 0;
       }
+
       .news-description {
         font-family: "Raleway";
         font-size: 20px;
         line-height: 30px;
       }
     }
+
     &__author {
       display: flex;
       align-items: center;
+
       .author-photo {
         width: 100px;
         height: 100px;
         border-radius: 50%;
       }
+
       .author-detail {
         margin-left: 20px;
+
         h4 {
           font-family: "Raleway";
           font-weight: 700;
@@ -291,12 +347,14 @@ section {
           line-height: 56px;
           letter-spacing: 0.2px;
         }
+
         p {
           font-family: "Raleway";
           font-size: 20px;
         }
       }
     }
+
     &__desc {
       p {
         font-family: "Lato";
@@ -311,9 +369,11 @@ section {
 .testimonial-section {
   padding: 60px 0;
   background: #fbfbfb;
+
   h2 {
     margin-bottom: 60px;
   }
+
   .testimonial-item {
     padding: 40px 60px;
     margin-left: 60px;
@@ -325,22 +385,27 @@ section {
     display: flex;
     align-items: center;
     text-align: left;
+
     @include mq("tablet", max) {
       flex-direction: column;
       margin-left: 0;
       margin-right: 0;
       padding: 40px;
     }
+
     &__avatar {
       padding-right: 50px;
+
       img {
         width: 120px;
         object-fit: cover;
+
         @include mq("tablet", max) {
           margin-bottom: 20px;
         }
       }
     }
+
     &-detail {
       display: flex;
       flex-direction: column;
@@ -352,16 +417,19 @@ section {
         line-height: 40px;
         padding-right: 20px;
       }
+
       &__role {
         font-family: "GT Walsheim Pro";
         font-weight: normal;
         font-size: 20px;
         line-height: 56px;
         letter-spacing: 0.2px;
+
         @include mq("tablet", max) {
           display: block;
         }
       }
+
       &__text {
         p {
           margin: 20px 0;
@@ -385,77 +453,95 @@ section {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 1px solid $cyan; 
+  border: 1px solid $cyan;
   background-color: #F5FAFB;
   display: flex;
   align-items: center;
   justify-content: center;
+
   img {
     cursor: pointer;
   }
+
   &.left {
     left: 24%;
+
     @include mq("tablet", max) {
       left: 20%;
     }
+
     @include mq("phone", max) {
       left: 5%;
     }
   }
+
   &.right {
     right: 24%;
+
     @include mq("tablet", max) {
       right: 20%;
     }
+
     @include mq("phone", max) {
       right: 5%;
     }
   }
 }
 
-.product-section, .products-section, .news-section {
+.product-section,
+.products-section,
+.news-section {
   .slick-slider {
     margin: 0 -12px 150px -12px;
   }
+
   .ft-slick__dots--custom {
     width: 100%;
     height: 4px;
     background-color: #e5e7e9;
   }
+
   .slick-dots {
     bottom: -105px;
     margin-top: 60px;
+
     li {
       height: 4px;
       margin: 0;
       width: 60px;
+
       @include mq("tablet", max) {
         width: 35px;
       }
+
       @include mq("phone", max) {
         width: 30px;
       }
+
       &:first-child {
         .ft-slick__dots--custom {
           border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
         }
       }
+
       &:last-child {
         .ft-slick__dots--custom {
           border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
         }
       }
+
       &.slick-active {
         position: relative;
         display: inline-block;
+
         .ft-slick__dots--custom {
           background-color: $cyan;
           border-radius: 4px;
           overflow: hidden;
         }
-      } 
+      }
     }
   }
 }

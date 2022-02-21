@@ -2,14 +2,30 @@ import React from "react"
 import { Link } from "gatsby"
 
 const HeroSlide = ({ data }) => {
+  let backgroundExtension = data.background.localFile.url;
+  let isVideoBackground = backgroundExtension.endsWith(".mp4");
   return (
     <div className="position-relative hero-slides">
-      <img
-        src={data.background.localFile.url}
-        loading="lazy"
-        alt="hero slide"
-        className="hero-img"
-      />
+      {isVideoBackground ? (
+        <video
+          style={{ objectFit: "cover" }}
+          className="video-player"
+          height="100%"
+          width="100%"
+          loop
+          muted
+          autoPlay
+        >
+          <source src={data.background.localFile.url} type="video/mp4" />
+        </video>
+      ) :
+        <img
+          src={data.background.localFile.url}
+          loading="lazy"
+          alt="hero slide"
+          className="hero-img"
+        />
+      }
       <div className="hero-slide">
         <div className="container">
           <div className="row">
@@ -28,7 +44,7 @@ const HeroSlide = ({ data }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
