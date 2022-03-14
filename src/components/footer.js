@@ -3,8 +3,7 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faTwitter,
-  faFacebook,
-  faInstagram,
+  faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 import ComMandoLogo from "../images/com-mando-logo.png"
@@ -12,59 +11,41 @@ import ComMandoLogo from "../images/com-mando-logo.png"
 const menus = [
   {
     submenu: "Products",
-    menu: ["TEMA", "TrackEye", "DIC", "Scanner"],
+    menu: ["TEMA", "TrackEye", "DIC System", "Photogrammetry", "Calibrations"],
   },
   {
     submenu: "Applications",
-    menu: [],
-  },
-  {
-    submenu: "Videos",
-    menu: ["Tutorials"],
-  },
-  {
-    submenu: "Downloads & Support",
-    menu: ["Downloads"],
+    menu: ["Car Safety Test", "Military", "Deformation", "Biology & liquid"],
   },
   {
     submenu: "Documents",
-    menu: ["Brochures", "Release Notes", "How To", "FAQ"],
+    menu: ["Brochures", "Release Notes", "How To"],
   },
   {
-    submenu: "Login/Register",
+    submenu: "Login",
     menu: ["Log In", "Customer Register", "Partner register"],
   },
   {
-    submenu: "Company",
+    submenu: "About us",
     menu: [
-      "About",
-      "Customer Survey",
-      "Contact Us",
-      "Career",
-      "ImageSystems Group",
       "News",
+      "Company",
+      "Investors",
+      "Career",
+      "Contact us",
     ],
-  },
-  {
-    submenu: "Investors",
-    menu: [],
   },
 ]
 const socials = [
   {
+    name: "Linkedin",
+    icon: faLinkedin,
+    href: "https://www.linkedin.com/notifications/",
+  },
+  {
     name: "Twitter",
     icon: faTwitter,
     href: "https://twitter.com/",
-  },
-  {
-    name: "Facebook",
-    icon: faFacebook,
-    href: "https://facebook.com/",
-  },
-  {
-    name: "Instagram",
-    icon: faInstagram,
-    href: "https://instagram.com/",
   },
   { name: "Youtube", icon: faYoutube, href: "https://youtube.com/" },
 ]
@@ -89,7 +70,7 @@ const Footer = () => {
       <div className="container">
         <nav className="footer-nav">
           <div className="row d-flex justify-content-between flex-wrap flex-column flex-lg-row">
-            <ul className="follow-us">
+            <ul className="follow-us d-flex">
               {socials.map((item, idx) => (
                 <li className="d-flex justify-content-center" key={idx}>
                   <a href={item.href} className="text-center">
@@ -98,7 +79,7 @@ const Footer = () => {
                       size="2x"
                       color="#5A5A5A"
                     />
-                    <p className="social-name">{item.name}</p>
+                    {/* <p className="social-name">{item.name}</p> */}
                   </a>
                 </li>
               ))}
