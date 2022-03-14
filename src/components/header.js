@@ -34,13 +34,12 @@ const Header = () => {
           </Link>
           <ul className={navMenuClsName}>
             <li
-              className={`nav-item dropdown ${
-                navMenuShow["products"] && "show"
-              }`}
+              className={`nav-item dropdown ${navMenuShow["products"] && "show"
+                }`}
               onClick={() => navMenuClick("products")}
               role="presentation"
             >
-              <a href="#products" className="nav-link">
+              <a href="https://imagesystemsen.gatsbyjs.io/category" className="nav-link">
                 Products
               </a>
               <NavProductTab />
@@ -61,7 +60,7 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#menu" className="nav-link">
+              <a href="https://imagesystemsen.gatsbyjs.io/about-us/" className="nav-link">
                 Company
               </a>
             </li>
