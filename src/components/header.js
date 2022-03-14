@@ -60,7 +60,7 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="https://imagesystemsen.gatsbyjs.io/about-us/" className="nav-link">
+              <a href="https://imagesystemsen.gatsbyjs.io/pages/about-us" className="nav-link">
                 Company
               </a>
             </li>
