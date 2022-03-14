@@ -89,6 +89,20 @@ const Footer = () => {
       <div className="container">
         <nav className="footer-nav">
           <div className="row d-flex justify-content-between flex-wrap flex-column flex-lg-row">
+            <ul className="follow-us">
+              {socials.map((item, idx) => (
+                <li className="d-flex justify-content-center" key={idx}>
+                  <a href={item.href} className="text-center">
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      size="2x"
+                      color="#5A5A5A"
+                    />
+                    <p className="social-name">{item.name}</p>
+                  </a>
+                </li>
+              ))}
+            </ul>
             {menus.map((item, idx) => (
               <div className="menu-list" key={idx}>
                 <p className="menu-type">{item.submenu}</p>
@@ -105,51 +119,20 @@ const Footer = () => {
           </div>
         </nav>
         <div className="bottom-bar">
-          <div className="d-flex align-items-center flex-wrap mb-5">
-            <p className="contact-label">Follow us</p>
-            <ul className="follow-us">
-              {socials.map((item, idx) => (
-                <li className="d-flex justify-content-center" key={idx}>
-                  <a href={item.href} className="text-center">
-                    <FontAwesomeIcon
-                      icon={item.icon}
-                      size="2x"
-                      color="#5A5A5A"
-                    />
-                    <p className="social-name">{item.name}</p>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="contact-container d-flex pt-3">
-            <p className="contact-label">Contact us</p>
-            <ul className="contact-mail">
-              {contacts.map((item, idx) => (
-                <li className="me-3" key={idx}>
-                  <a href={item.href}>{item.name}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="contact-phone flex-wrap my-4">
-            <div className="contact-container d-flex me-4">
-              <p className="contact-label">General Contact:</p>
-              <a href="tel:1-888-225-7579">1-888-225-7579</a>
+          <div className="d-flex justify-content-between align-items-center flex-wrap mb-5">
+            <p className="footer-label text-white">Copyright Image Systems AB. All rights reserved.</p>
+
+            <div className="contact-container d-flex pt-3">
+              <div className="contact-credit d-flex align-items-center flex-wrap">
+                <p className="me-4">Developed by</p>
+                <img
+                  src={ComMandoLogo}
+                  loading="lazy"
+                  className="mt-1"
+                  alt="Com-mando logo"
+                />
+              </div>
             </div>
-            <div className="contact-container d-flex">
-              <p className="contact-label">Customer Support:</p>
-              <a href="tel: 1-888-225-7579">1-888-225-7579 ext 5</a>
-            </div>
-          </div>
-          <div className="contact-credit d-flex align-items-center flex-wrap">
-            <p className="me-4">Developed by</p>
-            <img
-              src={ComMandoLogo}
-              loading="lazy"
-              className="mt-1"
-              alt="Com-mando logo"
-            />
           </div>
         </div>
       </div>
